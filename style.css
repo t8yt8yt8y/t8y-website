@@ -1,0 +1,166 @@
+/* --Colors
+Spinel Red (Pink): #FF4DC9
+Vandyke Red: #740909
+Turquoise Green: #B5FFC2 
+Green Blue: #2DBC94
+Sulphur Yellow: #F5F5B8
+Antwarp Blue: #008AA1
+-- */
+
+
+body {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-family: VT323;
+    text-decoration: none;
+    text-decoration: none; 
+  }
+  
+  
+  
+  /* --Text Style-- */
+  
+  h1 {
+    color: black;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    margin-left: 0%;
+    font-weight: normal;
+    font-size: 36px;
+  }
+  
+  h2 {
+    color: black;
+    font-weight: normal;
+    font-size: 26px;
+  }
+  
+  h3 {
+    font-weight: normal;
+    line-height: 1.2;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+  }
+  
+  .boxes p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .cards p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.5;
+    font-size: 20px;
+    margin-top: 3px;
+    margin-bottom: 1px;
+  }
+  
+  
+  a:hover {
+    cursor: url(emoji.png) 0 0, pointer;
+    color: #2DBC94;
+  }
+  
+  a {
+    color: black;
+    text-decoration-color: #2DBC94;
+  }
+  
+  /* --Boxes-- */
+  
+  .boxes {
+    margin-top: 40px;
+  }
+  
+  
+  /* --Cards-- */
+  
+  .boxes-cards{
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+  } 
+  
+  .boxes-cards::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cards {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 0.5px;
+    border-color: rgb(189, 189, 189);
+    min-width: 220px;
+   
+    overflow-wrap: break-word;
+  }
+  
+  .cards p {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .cards img {
+    width: 100%;
+    border: none;
+  }
+  
+  /* --Reach Out-- */
+  
+  social{
+    align-self: right;
+  }
+  
+  /* --Footer-- */
+  
+  footer{
+    margin-top: 55px;
+    text-align: center;
+  }
+  
+  footer p{
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  
+  footer a{
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  footer a:hover {
+    cursor: url(emoji.png) 0 0, pointer;
+  }
+  
+  /* --Laptop-- */
+  
+  @media (min-width: 668px) and (max-width: 1023px) {
+    body {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 5%;
+    }
+  
+    .cards {
+      min-width: 260px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    body {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 5%;
+    }
+  
+    .cards {
+      min-width: 300px;
+    }
+  }
