@@ -7,17 +7,20 @@ Sulphur Yellow: #F5F5B8
 Antwarp Blue: #008AA1
 -- */
 
+@font-face { 
+  font-family: 'VT323'; 
+  src: url('VT323-Regular.ttf') format('truetype'); 
+  font-weight: normal; 
+  font-style: normal; } 
 
 body {
     margin-left: 4%;
     margin-right: 4%;
     margin-top: 5%;
     margin-bottom: 2%;
-    font-family: VT323;
+    font-family: 'VT323';
     text-decoration: none;
-    text-decoration: none; 
   }
-  
   
   
   /* --Text Style-- */
