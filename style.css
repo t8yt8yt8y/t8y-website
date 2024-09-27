@@ -82,6 +82,11 @@ body {
     margin-top: 40px;
   }
   
+  .boxes-half {
+    width: 50%;
+    text-align: left;
+    margin: 0; 
+  }
   
   /* --Cards-- */
   
@@ -167,3 +172,4 @@ body {
       min-width: 300px;
     }
   }
+
