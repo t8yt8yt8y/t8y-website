@@ -68,7 +68,7 @@ body {
   
   a:hover {
     cursor: url(emoji.png) 0 0, pointer;
-    color: #2DBC94;
+    color: #ca1b1b;
   }
   
   a {
@@ -82,11 +82,6 @@ body {
     margin-top: 40px;
   }
   
-  .boxes-half {
-    width: 50%;
-    text-align: left;
-    margin: 0; 
-  }
   
   /* --Cards-- */
   
@@ -158,6 +153,7 @@ body {
   
     .cards {
       min-width: 260px;
+      max-width: 260px;
     }
   }
   
@@ -170,6 +166,6 @@ body {
   
     .cards {
       min-width: 300px;
+      min-width: 300px;
     }
   }
-
