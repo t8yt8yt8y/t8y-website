@@ -7,9 +7,62 @@
   <title>Poisoning Reality</title>
   <link rel="shortcut icon" href="../../assets/images/t8y_favicon.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+  <style>
+    /* Site Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 20px;
+      z-index: 100;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .home-button {
+      font-family: 'VT323', monospace;
+      font-size: 24px;
+      text-decoration: none;
+      color: #000000;
+      background-color: #FFFFFF;
+      padding: 5px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .home-button:hover {
+      transform: scale(1.05);
+      color: #FB0009;
+    }
+
+    .back-link {
+      font-family: 'VT323', monospace;
+      font-size: 24px;
+      text-decoration: none;
+      color: #000000;
+      background-color: #FFFFFF;
+      padding: 5px 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .back-link:hover {
+      transform: scale(1.05);
+      color: #FB0009;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="site-header">
+    <a href="../../index.html" class="back-link">back</a>
+  </div>
+  
   <!-- Description -->
   <section class="boxes">
     <p>'Poisoning Reality' explores how algorithms blur the line between fiction and reality, exposing the fragility and manipulability of our perceptions. Based on the algorithmic principle "reality is what there is more data about", we reimagine the rarely documented moth Neopalpa donaldtrumpi by disseminating manipulated images across online platforms and databases. This interference highlights the dynamic interplay between the digital and the physical worlds, challenging viewers to reconsider the authenticity of the information that shapes their understanding of reality. </p>

@@ -7,9 +7,62 @@
   <title>Funklöcher</title>
   <link rel="shortcut icon" href="../../assets/images/t8y_favicon.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+  <style>
+    /* Site Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 20px;
+      z-index: 100;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .home-button {
+      font-family: 'VT323', monospace;
+      font-size: 24px;
+      text-decoration: none;
+      color: #000000;
+      background-color: #FFFFFF;
+      padding: 5px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .home-button:hover {
+      transform: scale(1.05);
+      color: #FB0009;
+    }
+
+    .back-link {
+      font-family: 'VT323', monospace;
+      font-size: 24px;
+      text-decoration: none;
+      color: #000000;
+      background-color: #FFFFFF;
+      padding: 5px 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .back-link:hover {
+      transform: scale(1.05);
+      color: #FB0009;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="site-header">
+    <a href="../../index.html" class="back-link">back</a>
+  </div>
+  
   <!-- Description -->
   <section class="boxes">
     <p>'Funklöcher' is an exploration of places where network coverage ends. We do not view these zones as deficits but as tangible counterpoints to our connected daily lives, making them potential refuges of cultural significance. 'Funklöcher' invites us to perceive the interruption of connectivity as a deliberate experience and to reflect on the implications of ubiquitous networking.</p>
