@@ -1,0 +1,631 @@
+#welcome-screen::before,
+#smile-screen.not-smiling::before,
+#smile-screen.smiling::before {
+  top: 0;
+}
+
+#welcome-screen::after,
+#smile-screen.not-smiling::after,
+#smile-screen.smiling::after {
+  bottom: 0;
+  transform: rotate(180deg);
+}* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Welcome Screen */
+#welcome-screen {
+  background-color: #FB0009; /* Updated red color */
+  color: #FFD700;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top and bottom banners */
+#welcome-screen::before, 
+#welcome-screen::after {
+  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #FFD700;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+#welcome-screen::before {
+  top: 0;
+}
+
+#welcome-screen::after {
+  bottom: 0;
+  transform: rotate(180deg);
+}
+
+/* Smiley face image styling */
+.smiley-image {
+  width: 280px; /* Larger size */
+  height: 280px;
+  object-fit: contain;
+  margin-bottom: 30px;
+  background-color: #FB0009; /* Match the red background color */
+  border-radius: 50%; /* Optional: adds rounded corners if the image isn't already circular */
+  transition: transform 0.3s ease;
+}
+
+.smiley-image:hover {
+  transform: scale(1.05); /* Slight growth on hover for interactive effect */
+}
+
+/* Commented out CSS smiley face styling as we now use an image */
+/* 
+.smiley-icon {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin-bottom: 30px;
+  background-color: #FB0009;
+}
+
+.smiley-eyes::before,
+.smiley-eyes::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 35px;
+  background-color: #FFD700;
+  top: 30px;
+}
+
+.smiley-eyes::before {
+  left: 60px;
+}
+
+.smiley-eyes::after {
+  right: 60px;
+}
+
+.smiley-mouth {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  border: none;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.smiley-mouth::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  clip-path: polygon(
+    0% 0%,      
+    20% 60%,    
+    50% 100%,   
+    80% 60%,    
+    100% 0%     
+  );
+  border: 8px solid #FFD700;
+  border-top: none;
+}
+*/
+
+#welcome-screen h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#start-button {
+  background-color: #FFFFFF;
+  color: #FB0009; /* Updated red color */
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 20px 0 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.camera-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #FB0009; /* Updated red color */
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-icon::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#welcome-screen p {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Smile Screen */
+#smile-screen {
+  background-color: #FB0009; /* Updated red color for smiling state */
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#smile-screen.not-smiling::before, 
+#smile-screen.not-smiling::after,
+#smile-screen.smiling::before,
+#smile-screen.smiling::after {
+  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #FFD700;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  z-index: 15;
+  background-color: transparent;
+}
+
+#smile-screen.not-smiling::before, 
+#smile-screen.smiling::before {
+  top: 0;
+  height: auto;
+  padding: 5px 0;
+  line-height: normal;
+  overflow: hidden;
+  background-color: transparent;
+  z-index: 20;
+}
+
+#smile-screen.not-smiling::after,
+#smile-screen.smiling::after {
+  bottom: 0;
+  height: auto;
+  padding: 5px 0;
+  line-height: normal;
+  overflow: hidden;
+  transform: rotate(180deg);
+  background-color: transparent;
+  z-index: 20;
+}
+
+/* Special styles for left/right text */
+.side-text-left,
+.side-text-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 30px;
+  writing-mode: vertical-rl;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFD700;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  z-index: 15;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: transparent !important;
+}
+
+.side-text-left {
+  left: 0;
+  transform: rotate(180deg);
+  background-color: transparent !important;
+}
+
+.side-text-right {
+  right: 0;
+  background-color: transparent !important;
+}
+
+/* Set background colors based on smile state */
+#smile-screen.not-smiling {
+  background-color: #FFC0CB; /* Pink background when not smiling */
+}
+
+#smile-screen.smiling {
+  background-color: #FB0009; /* Updated red color when smiling */
+}
+
+/* Canvas container for video - match the screenshot proportions */
+#canvas-container {
+  position: absolute;
+  width: calc(100% - 100px); /* Increase side margins */
+  max-width: 1200px;
+  height: 0;
+  padding-bottom: 42%; /* Further reduce height */
+  top: 45%; /* Move significantly upward */
+  left: 50%;
+  transform: translate(-50%, -55%); /* Adjust vertical positioning */
+  border: none;
+  overflow: hidden;
+  z-index: 5;
+  background-color: black;
+  margin-top: 60px;  /* Increase space for top banner */
+  margin-bottom: 80px; /* Significantly increase space for bottom banner */
+}
+
+#camera-feed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 6;
+}
+
+/* Message container positioning - move up to avoid overlap */
+#message-container {
+  position: absolute;
+  font-size: 28px;
+  bottom: 100px; /* Increase distance from bottom */
+  left: 0;
+  right: 0;
+  color: #FFD700; /* Yellow text */
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  z-index: 25; /* Higher z-index to ensure visibility */
+  text-shadow: none;
+  margin: 0;
+  padding: 0 20px;
+}
+
+#smile-screen.not-smiling #message-container {
+  color: #FFD700; /* Yellow text when not smiling */
+}
+
+#smile-screen.smiling #message-container {
+  color: #FFD700; /* Yellow text when smiling */
+}
+
+/* Timer positioning - positioned like in the screenshot */
+/* 
+   To change timer positioning:
+   - 'bottom: 50px' controls distance from bottom (increase to move up)
+   - 'right: 50px' controls distance from right (increase to move left)
+   - Or replace with 'left: 50px' to position from left side
+   - For center positioning, use 'left: 50%' and 'transform: translateX(-50%)'
+*/
+#timer {
+  position: absolute;
+  font-size: 48px;
+  color: #FFD700; /* Yellow text */
+  bottom: 100px; /* Align with the message container */
+  right: 150px; /* Move more to the left */
+  text-align: right;
+  font-weight: bold;
+  text-shadow: none;
+  z-index: 25; /* Higher z-index to ensure visibility */
+  margin: 0;
+  background-color: transparent;
+}
+
+#email-form {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 20px 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(251, 0, 9, 0.7); /* Updated rgba red color */
+  padding: 20px;
+  border-radius: 0;
+}
+
+#email-form p {
+  margin-bottom: 15px;
+  color: #FFD700;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+#email-input {
+  width: 250px;
+  padding: 12px;
+  border: 2px solid #FFD700;
+  margin-bottom: 15px;
+  border-radius: 0;
+  background-color: transparent;
+  color: #FFD700;
+  font-size: 18px;
+}
+
+#email-input::placeholder {
+  color: rgba(255, 215, 0, 0.6);
+}
+
+#email-form label {
+  display: block;
+  color: #FFD700;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#submit-email {
+  background-color: #FFD700;
+  color: #FF0000;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Thank You Screen */
+#thank-you-screen {
+  background-color: #FFC0CB;
+  color: #FF0000;
+}
+
+#restart-button {
+  background-color: #FF0000;
+  color: #FFD700;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+/* Smiley Indicator */
+#smiley-indicator-container {
+  display: none;
+}
+
+#smiley-indicator {
+  position: absolute;
+  bottom: 100px; /* Same height as the timer */
+  left: 150px; /* Distance from left edge */
+  z-index: 25;
+  display: block;
+}
+
+.mood-smiley-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #canvas-container {
+    width: 90%;
+  }
+  
+  .smiley-image {
+    width: 220px;
+    height: 220px;
+  }
+  
+  #timer {
+    font-size: 36px;
+    right: 120px; /* Adjust for medium screens */
+  }
+  
+  #message-container {
+    font-size: 20px;
+  }
+  
+  #smiley-indicator {
+    bottom: 100px;
+    left: 120px;
+  }
+  
+  .mood-smiley-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  #canvas-container {
+    width: 95%;
+  }
+  
+  .smiley-image {
+    width: 180px;
+    height: 180px;
+  }
+  
+  #timer {
+    font-size: 28px;
+    right: 80px; /* Adjust for small screens */
+  }
+  
+  #message-container {
+    font-size: 18px;
+  }
+  
+  .side-text-left, .side-text-right {
+    font-size: 14px;
+  }
+  
+  #smiley-indicator {
+    bottom: 100px;
+    left: 80px;
+  }
+  
+  .mood-smiley-image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Firefox-specific background handling */
+@-moz-document url-prefix() {
+  /* Remove the background override to allow proper colors
+  #smile-screen.smiling, 
+  #smile-screen.not-smiling {
+    background-color: transparent !important;
+  }
+  */
+  
+  .side-text-left,
+  .side-text-right,
+  #message-container,
+  #timer {
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
+/* Smiley Pattern Overlay */
+#smiley-pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Above camera (z-index: 6) but below email form (z-index: 20) */
+  background-color: transparent;
+  pointer-events: none; /* Allow clicks to go through to elements below */
+  overflow: hidden;
+}
+
+#smiley-pattern-overlay.hidden {
+  display: none;
+}
+
+/* Prevent overlapping with smiley pattern */
+#email-form {
+  background-color: rgba(251, 0, 9, 0.85); /* Slightly more opaque to cover smiley pattern */
+}
+
+.pattern-smiley {
+  object-fit: contain;
+  border-radius: 50%;
+  transform-origin: center;
+  animation: float 5s infinite ease-in-out;
+  animation-delay: calc(var(--delay) * 1s);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+}
+
+/* Site Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 100;
+  text-align: left;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #FB0009;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #FFFFFF;
+  transform: translateX(-3px);
+}

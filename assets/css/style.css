@@ -9,7 +9,7 @@ Antwarp Blue: #008AA1
 
 @font-face { 
   font-family: 'VT323'; 
-  src: url('VT323-Regular.ttf') format('truetype'); 
+  src: url('../fonts/VT323-Regular.ttf') format('truetype'); 
   font-weight: normal; 
   font-style: normal; } 
 
@@ -67,7 +67,7 @@ body {
   
   
   a:hover {
-    cursor: url(emoji.png) 0 0, pointer;
+    cursor: url(../images/emoji.png) 0 0, pointer;
     color: #ca1b1b;
   }
   
@@ -139,7 +139,7 @@ body {
   }
   
   footer a:hover {
-    cursor: url(emoji.png) 0 0, pointer;
+    cursor: url(../images/emoji.png) 0 0, pointer;
   }
   
   /* --Laptop-- */

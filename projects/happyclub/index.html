@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Happy Club</title>
+<link rel="shortcut icon" href="../../assets/images/t8y_favicon.jpg" type="image/x-icon">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-header">
+  <a href="../../index.html" class="back-link">← Back to t8y</a>
+</div>
+<div id="app-container">
+<div id="welcome-screen" class="screen">
+  <img src="Smiley_Happy.png" alt="Happy Club Smiley Face" class="smiley-image">
+  <h1>Welcome to the Happy Club!</h1>
+  <button id="start-button">
+    <div class="camera-icon"></div>
+    Let me in!
+  </button>
+  <p>Smile long enough to receive certificates and join our club!</p>
+  <div class="side-text-left">Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =)</div>
+  <div class="side-text-right">Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =)</div>
+</div>
+<div id="smile-screen" class="screen hidden">
+  <div id="canvas-container">
+    <video id="camera-feed" playsinline autoplay muted></video>
+  </div>
+  <div id="smiley-pattern-overlay" class="hidden"></div>
+  <div class="side-text-left">Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =)</div>
+  <div class="side-text-right">Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =)</div>
+  <div id="message-container"></div>
+  <div id="timer">00:03</div>
+  <div id="smiley-indicator">
+    <img id="mood-smiley" src="Smiley_Unhappy.png" alt="Mood Indicator" class="mood-smiley-image">
+  </div>
+  <div id="email-form" class="hidden">
+    <label for="email-input">Enter your email:</label>
+    <input type="email" id="email-input" placeholder="Your Email">
+    <p>Wow, you belong to us! Receive your Happy Club Certificate to join our club!</p>
+  </div>
+</div>
+<div id="thank-you-screen" class="screen hidden">
+  <h1>Thank you for joining the Happy Club!</h1>
+  <p>Your certificate has been sent to your email.</p>
+  <button id="restart-button">Smile Again</button>
+</div>
+</div>
+<script src="sketch.js"></script>
+</body>
+</html>
