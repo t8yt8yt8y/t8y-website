@@ -4,7 +4,19 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Happy Club</title>
+<title>Happy Club | Interactive AI Installation by t8y</title>
+<meta name="description" content="Happy Club is an interactive art installation that uses AI and facial recognition to explore forced happiness and digital emotional surveillance." />
+<meta name="keywords" content="happy club, interactive art, facial recognition art, AI installation, Swiss art, t8y collective, emotional surveillance" />
+<meta name="author" content="t8y Collective" />
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="Happy Club | Interactive AI Installation by t8y" />
+<meta property="og:description" content="Smile and get your happiness certificate in this interactive installation using AI facial recognition." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://t8y.ch/projects/happyclub/" />
+<meta property="og:image" content="Smiley_Happy.png" />
+
+<!-- Favicon -->
 <link rel="shortcut icon" href="../../assets/images/t8y_favicon.jpg" type="image/x-icon">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
 <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
@@ -17,15 +29,18 @@
   font-style: normal; 
 }
 </style>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://t8y.ch/projects/happyclub/" />
 </head>
 <body>
 <div class="site-header">
   <a href="../../index.html" class="back-link">←</a>
 </div>
-<div id="app-container">
+<main id="app-container">
 <div id="welcome-screen" class="screen">
-  <img src="Smiley_Happy.png" alt="Happy Club Smiley Face" class="smiley-image">
-  <h1>Welcome to the Happy Club!</h1>
+  <img src="Smiley_Happy.png" alt="Happy Club Smiley Face - Interactive AI Art Installation" class="smiley-image">
+  <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">Welcome to the Happy Club!</h1>
   <button id="start-button">
     <div class="camera-icon"></div>
     Let me in!
@@ -44,7 +59,7 @@
   <div id="message-container"></div>
   <div id="timer">00:03</div>
   <div id="smiley-indicator">
-    <img id="mood-smiley" src="Smiley_Unhappy.png" alt="Mood Indicator" class="mood-smiley-image">
+    <img id="mood-smiley" src="Smiley_Unhappy.png" alt="Mood Indicator - AI Facial Recognition" class="mood-smiley-image">
   </div>
   <div id="email-form" class="hidden">
     <label for="email-input">Enter your email:</label>
@@ -53,11 +68,14 @@
   </div>
 </div>
 <div id="thank-you-screen" class="screen hidden">
-  <h1>Thank you for joining the Happy Club!</h1>
+  <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">Thank you for joining the Happy Club!</h1>
   <p>Your certificate has been sent to your email.</p>
   <button id="restart-button">Smile Again</button>
 </div>
-</div>
+</main>
+<footer>
+  <!-- Hidden footer content for SEO -->
+</footer>
 <script src="sketch.js"></script>
 </body>
 </html>
