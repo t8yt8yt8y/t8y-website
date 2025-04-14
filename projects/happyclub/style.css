@@ -302,19 +302,12 @@ body, html {
 /* Canvas container for video - match the screenshot proportions */
 #canvas-container {
   position: absolute;
-  width: calc(100% - 100px); /* Increase side margins */
-  max-width: 1200px;
-  height: 0;
-  padding-bottom: 42%; /* Further reduce height */
-  top: 45%; /* Move significantly upward */
-  left: 50%;
-  transform: translate(-50%, -55%); /* Adjust vertical positioning */
+  width: calc(100% - 80px); /* Increase side margins */
+  height: calc(100% - 80px);
   border: none;
   overflow: hidden;
   z-index: 5;
   background-color: black;
-  margin-top: 60px;  /* Increase space for top banner */
-  margin-bottom: 80px; /* Significantly increase space for bottom banner */
 }
 
 #camera-feed {
@@ -367,7 +360,7 @@ body, html {
   position: absolute;
   font-size: 48px;
   color: #FFD700; /* Yellow text */
-  bottom: 100px; /* Align with the message container */
+  top: 100px; /* Align with the message container */
   right: 150px; /* Move more to the left */
   text-align: right;
   font-weight: bold;
@@ -460,7 +453,7 @@ body, html {
 
 #smiley-indicator {
   position: absolute;
-  bottom: 100px; /* Same height as the timer */
+  top: 100px; /* Same height as the timer */
   left: 150px; /* Distance from left edge */
   z-index: 25;
   display: block;
@@ -649,4 +642,21 @@ body, html {
 .back-link:hover {
   transform: scale(1.05);
   color: #FB0009;
+}
+
+.smile-again {
+  background-color: #FFD700;
+  color: #FB0009;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.smile-again:hover {
+  transform: scale(1.05);
 }
