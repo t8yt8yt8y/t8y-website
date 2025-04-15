@@ -23,7 +23,7 @@ let smileyPatternOverlay;
 // App state
 let tracking = false;
 let smileStartTime = 0;
-let targetTime = 3; // 3 seconds smiling target
+let targetTime = 30; // 3 seconds smiling target
 
 function preload() {
   // Load the faceMesh model
