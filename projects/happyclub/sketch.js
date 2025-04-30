@@ -197,7 +197,7 @@ function draw() {
     if (!emailForm.classList.contains('hidden')) {
       updateMessage("");
     } else {
-      updateMessage("Do you really consider this a smile?\nYou are not worthy of our club.");
+      updateMessage("Do you consider this a smile?\nYou are not worthy of our club.");
     }
     // Let the CSS handle the background color
     smileScreen.classList.add('not-smiling');
@@ -209,7 +209,7 @@ function draw() {
     if (!emailForm.classList.contains('hidden')) {
       updateMessage("");
     } else {
-      updateMessage("There you go! Just keep smiling\nand join us on the happy side of life!");
+      updateMessage("There you go! Just keep smiling\nand join us on the happy side");
     }
     // Let the CSS handle the background color
     smileScreen.classList.remove('not-smiling');
