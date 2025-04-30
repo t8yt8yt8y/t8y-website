@@ -11,7 +11,7 @@
   transform: rotate(180deg);
 }* {
   margin: 0;
-  padding: 0;
+  padding: 5px, 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
@@ -42,7 +42,7 @@ body, html {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0;
+  padding: 5px, 0;
   text-align: center;
   z-index: 1;
 }
@@ -73,15 +73,17 @@ body, html {
   left: 0;
   display: block;
   overflow: hidden;
-  padding: 5px 0;
+  padding: 5px, 0;
 }
 
 #welcome-screen::before {
   top: 0;
+  padding: 5px, 0;
 }
 
 #welcome-screen::after {
   bottom: 0;
+  padding: 5px, 0;
   transform: rotate(180deg);
 }
 
@@ -340,13 +342,7 @@ body, html {
   padding: 0 20px;
 }
 
-#smile-screen.not-smiling #message-container {
-  color: #FFD700; /* Yellow text when not smiling */
-}
 
-#smile-screen.smiling #message-container {
-  color: #FFD700; /* Yellow text when smiling */
-}
 
 /* Timer positioning - positioned like in the screenshot */
 /* 
@@ -470,7 +466,7 @@ body, html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #canvas-container {
-    width: 90%;
+    width: (100%-80px);
   }
   
   .smiley-image {
@@ -500,7 +496,7 @@ body, html {
 
 @media (max-width: 480px) {
   #canvas-container {
-    width: 95%;
+    width: (100%-80px);
   }
   
   .smiley-image {
@@ -518,7 +514,7 @@ body, html {
   }
   
   .side-text-left, .side-text-right {
-    font-size: 14px;
+    font-size: 18px;
   }
   
   #smiley-indicator {
