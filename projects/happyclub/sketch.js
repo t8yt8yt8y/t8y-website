@@ -86,12 +86,7 @@ function setup() {
   let canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(canvasContainer);
   
-  // Create hidden video element for ml5 to use
-  video = createCapture(VIDEO);
-  video.hide();
   
-  // Start detecting faces from the webcam video
-  faceMesh.detectStart(video, gotFaces);
 }
 
 function windowResized() {
@@ -116,6 +111,14 @@ function startTracking() {
       cameraFeed.srcObject = stream;
       cameraFeed.onloadedmetadata = function(e) {
         cameraFeed.play();
+        if (!video) {
+          video = createCapture(VIDEO);
+          video.hide();
+        }
+        if (faceMesh && video) {
+          faceMesh.detectStart(video, gotFaces);
+        }
+       
         console.log("Camera started successfully");
       };
       
