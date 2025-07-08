@@ -62,7 +62,7 @@ body, html {
 /* Top and bottom banners */
 #welcome-screen::before, 
 #welcome-screen::after {
-  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
+  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
   position: absolute;
   width: 100%;
   text-align: left;
@@ -220,7 +220,7 @@ body, html {
 #smile-screen.not-smiling::after,
 #smile-screen.smiling::before,
 #smile-screen.smiling::after {
-  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
+  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
   position: absolute;
   width: 100%;
   text-align: left;
@@ -649,4 +649,65 @@ body, html {
 .back-link:hover {
   transform: scale(1.05);
   color: #FB0009;
+}
+
+/* Download Button Styles */
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  color: #FB0009;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.download-button:hover {
+  transform: scale(1.05);
+  background-color: #FFD700;
+  color: #FB0009;
+}
+
+.download-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #FB0009;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-icon::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #FFFFFF;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+  top: 50%;
+  left: 50%;
+  margin-top: -2px;
+  margin-left: -4px;
+}
+
+.download-icon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background-color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 2px;
 }

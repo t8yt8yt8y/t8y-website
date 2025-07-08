@@ -13,7 +13,6 @@ let startButton;
 let messageContainer;
 let timerDisplay;
 let emailForm;
-let emailInput;
 let restartButton;
 let canvasContainer;
 let cameraFeed;
@@ -23,7 +22,7 @@ let smileyPatternOverlay;
 // App state
 let tracking = false;
 let smileStartTime = 0;
-let targetTime = 30; // 3 seconds smiling target
+let targetTime = 3; // 3 seconds smiling target
 
 function preload() {
   // Load the faceMesh model
@@ -39,7 +38,6 @@ function setup() {
   messageContainer = document.getElementById('message-container');
   timerDisplay = document.getElementById('timer');
   emailForm = document.getElementById('email-form');
-  emailInput = document.getElementById('email-input');
   restartButton = document.getElementById('restart-button');
   canvasContainer = document.getElementById('canvas-container');
   cameraFeed = document.getElementById('camera-feed');
@@ -62,11 +60,6 @@ function setup() {
   // Setup event listeners
   startButton.addEventListener('click', function() {
     startTracking();
-  });
-  emailInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-      submitEmail();
-    }
   });
   restartButton.addEventListener('click', restartApp);
   
@@ -199,17 +192,17 @@ function draw() {
     secondsRemaining = 0;
     timerDisplay.textContent = "00:00";
     
-    // Show email form when time is up
+    // Show download form when time is up
     if (!emailForm.classList.contains('hidden')) {
       // Already showing
       return;
     }
     
-    // Create smiley pattern before showing email form
+    // Create smiley pattern before showing download form
     createSmileyPattern();
     smileyPatternOverlay.classList.remove('hidden');
     
-    // Show the email form and hide any smile-related feedback
+    // Show the download form and hide any smile-related feedback
     emailForm.classList.remove('hidden');
     updateMessage("");
     
@@ -301,7 +294,6 @@ function restartApp() {
   thankYouScreen.classList.add('hidden');
   welcomeScreen.classList.remove('hidden');
   tracking = false;
-  emailInput.value = '';
   updateMessage("");
   timerDisplay.textContent = "00:03";
   
@@ -320,21 +312,6 @@ function gotFaces(results) {
 
 function updateMessage(message) {
   messageContainer.textContent = message;
-}
-
-function submitEmail() {
-  const email = emailInput.value.trim();
-  if (isValidEmail(email)) {
-    tracking = false;
-    smileScreen.classList.add('hidden');
-    thankYouScreen.classList.remove('hidden');
-  } else {
-    alert("Please enter a valid email address");
-  }
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 // Function to create smiley pattern
