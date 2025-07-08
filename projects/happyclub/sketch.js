@@ -44,42 +44,27 @@ function setup() {
   moodSmiley = document.getElementById('mood-smiley');
   smileyPatternOverlay = document.getElementById('smiley-pattern-overlay');
   
+  // Create a responsive canvas
+  let canvasWidth = canvasContainer.offsetWidth;
+  let canvasHeight = canvasWidth * 9/16; // 16:9 aspect ratio
+  let canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.parent(canvasContainer);
+  
+  // Create hidden video element for ml5 to use
+  video = createCapture(VIDEO);
+  video.hide();
+  
+  // Start detecting faces from the webcam video
+  faceMesh.detectStart(video, gotFaces);
+  
   // Setup event listeners
   startButton.addEventListener('click', function() {
     startTracking();
   });
   restartButton.addEventListener('click', restartApp);
   
-  // Add event listener for the new Smile Again button
-  document.getElementById('smile-again-button').addEventListener('click', function() {
-    // Hide email form
-    emailForm.classList.add('hidden');
-    smileyPatternOverlay.classList.add('hidden');
-    smileyPatternOverlay.innerHTML = '';
-    
-    // Reset timer, show it, and start tracking again
-    timerDisplay.classList.remove('hidden');  // Show timer again
-    tracking = true;
-    smileStartTime = millis();
-    timerDisplay.textContent = "00:30";
-    
-    // Reset smile state
-    smileScreen.classList.add('not-smiling');
-    smileScreen.classList.remove('smiling');
-    
-    updateMessage("Start smiling!");
-  });
-  
   // Add window resize handler
   window.addEventListener('resize', windowResized);
-  
-  // Create a responsive canvas
-  let canvasWidth = canvasContainer.offsetWidth;
-  let canvasHeight = canvasWidth * 9/16;
-  let canvas = createCanvas(canvasWidth, canvasHeight);
-  canvas.parent(canvasContainer);
-  
-  
 }
 
 function windowResized() {
@@ -104,28 +89,20 @@ function startTracking() {
       cameraFeed.srcObject = stream;
       cameraFeed.onloadedmetadata = function(e) {
         cameraFeed.play();
-        if (!video) {
-          video = createCapture(VIDEO);
-          video.hide();
-        }
-        if (faceMesh && video) {
-          faceMesh.detectStart(video, gotFaces);
-        }
-       
+        
+        // Start tracking
+        tracking = true;
+        smileStartTime = millis();
+        welcomeScreen.classList.add('hidden');
+        smileScreen.classList.remove('hidden');
+        
+        // Initialize with not-smiling state (pink background)
+        smileScreen.classList.add('not-smiling');
+        smileScreen.classList.remove('smiling');
+        
+        updateMessage("Start smiling!");
         console.log("Camera started successfully");
       };
-      
-      // Start tracking
-      tracking = true;
-      smileStartTime = millis();
-      welcomeScreen.classList.add('hidden');
-      smileScreen.classList.remove('hidden');
-      
-      // Initialize with not-smiling state (pink background)
-      smileScreen.classList.add('not-smiling');
-      smileScreen.classList.remove('smiling');
-      
-      updateMessage("Start smiling!");
     })
     .catch(function(err) {
       console.error("Camera error: ", err);
@@ -328,7 +305,7 @@ function restartApp() {
   welcomeScreen.classList.remove('hidden');
   tracking = false;
   updateMessage("");
-  timerDisplay.textContent = "00:30";
+  timerDisplay.textContent = "00:03";
   
   // Reset and show the smiley indicator
   document.getElementById('smiley-indicator').style.display = 'block';
