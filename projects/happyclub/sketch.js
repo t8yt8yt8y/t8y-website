@@ -22,7 +22,7 @@ let smileyPatternOverlay;
 // App state
 let tracking = false;
 let smileStartTime = 0;
-let targetTime = 3; // 3 seconds smiling target
+let targetTime = 30; // 30 seconds smiling target
 
 function preload() {
   // Load the faceMesh model
@@ -305,7 +305,7 @@ function restartApp() {
   welcomeScreen.classList.remove('hidden');
   tracking = false;
   updateMessage("");
-  timerDisplay.textContent = "00:03";
+  timerDisplay.textContent = "00:30";
   
   // Reset and show the smiley indicator
   document.getElementById('smiley-indicator').style.display = 'block';
