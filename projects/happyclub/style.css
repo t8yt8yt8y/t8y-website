@@ -11,7 +11,7 @@
   transform: rotate(180deg);
 }* {
   margin: 0;
-  padding: 0;
+  padding: 5px, 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
@@ -42,7 +42,7 @@ body, html {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0;
+  padding: 5px, 0;
   text-align: center;
   z-index: 1;
 }
@@ -62,7 +62,7 @@ body, html {
 /* Top and bottom banners */
 #welcome-screen::before, 
 #welcome-screen::after {
-  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
+  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
   position: absolute;
   width: 100%;
   text-align: left;
@@ -73,15 +73,17 @@ body, html {
   left: 0;
   display: block;
   overflow: hidden;
-  padding: 5px 0;
+  padding: 5px, 0;
 }
 
 #welcome-screen::before {
   top: 0;
+  padding: 5px, 0;
 }
 
 #welcome-screen::after {
   bottom: 0;
+  padding: 5px, 0;
   transform: rotate(180deg);
 }
 
@@ -220,7 +222,7 @@ body, html {
 #smile-screen.not-smiling::after,
 #smile-screen.smiling::before,
 #smile-screen.smiling::after {
-  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
+  content: "Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) ";
   position: absolute;
   width: 100%;
   text-align: left;
@@ -302,19 +304,12 @@ body, html {
 /* Canvas container for video - match the screenshot proportions */
 #canvas-container {
   position: absolute;
-  width: calc(100% - 100px); /* Increase side margins */
-  max-width: 1200px;
-  height: 0;
-  padding-bottom: 42%; /* Further reduce height */
-  top: 45%; /* Move significantly upward */
-  left: 50%;
-  transform: translate(-50%, -55%); /* Adjust vertical positioning */
+  width: calc(100% - 80px); /* Increase side margins */
+  height: calc(100% - 80px);
   border: none;
   overflow: hidden;
   z-index: 5;
   background-color: black;
-  margin-top: 60px;  /* Increase space for top banner */
-  margin-bottom: 80px; /* Significantly increase space for bottom banner */
 }
 
 #camera-feed {
@@ -347,13 +342,7 @@ body, html {
   padding: 0 20px;
 }
 
-#smile-screen.not-smiling #message-container {
-  color: #FFD700; /* Yellow text when not smiling */
-}
 
-#smile-screen.smiling #message-container {
-  color: #FFD700; /* Yellow text when smiling */
-}
 
 /* Timer positioning - positioned like in the screenshot */
 /* 
@@ -367,7 +356,7 @@ body, html {
   position: absolute;
   font-size: 48px;
   color: #FFD700; /* Yellow text */
-  bottom: 100px; /* Align with the message container */
+  top: 100px; /* Align with the message container */
   right: 150px; /* Move more to the left */
   text-align: right;
   font-weight: bold;
@@ -460,7 +449,7 @@ body, html {
 
 #smiley-indicator {
   position: absolute;
-  bottom: 100px; /* Same height as the timer */
+  top: 100px; /* Same height as the timer */
   left: 150px; /* Distance from left edge */
   z-index: 25;
   display: block;
@@ -477,7 +466,7 @@ body, html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #canvas-container {
-    width: 90%;
+    width: (100%-80px);
   }
   
   .smiley-image {
@@ -507,7 +496,7 @@ body, html {
 
 @media (max-width: 480px) {
   #canvas-container {
-    width: 95%;
+    width: (100%-80px);
   }
   
   .smiley-image {
@@ -525,7 +514,7 @@ body, html {
   }
   
   .side-text-left, .side-text-right {
-    font-size: 14px;
+    font-size: 18px;
   }
   
   #smiley-indicator {

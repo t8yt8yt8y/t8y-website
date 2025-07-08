@@ -44,27 +44,42 @@ function setup() {
   moodSmiley = document.getElementById('mood-smiley');
   smileyPatternOverlay = document.getElementById('smiley-pattern-overlay');
   
-  // Create a responsive canvas
-  let canvasWidth = canvasContainer.offsetWidth;
-  let canvasHeight = canvasWidth * 9/16; // 16:9 aspect ratio
-  let canvas = createCanvas(canvasWidth, canvasHeight);
-  canvas.parent(canvasContainer);
-  
-  // Create hidden video element for ml5 to use
-  video = createCapture(VIDEO);
-  video.hide();
-  
-  // Start detecting faces from the webcam video
-  faceMesh.detectStart(video, gotFaces);
-  
   // Setup event listeners
   startButton.addEventListener('click', function() {
     startTracking();
   });
   restartButton.addEventListener('click', restartApp);
   
+  // Add event listener for the new Smile Again button
+  document.getElementById('smile-again-button').addEventListener('click', function() {
+    // Hide email form
+    emailForm.classList.add('hidden');
+    smileyPatternOverlay.classList.add('hidden');
+    smileyPatternOverlay.innerHTML = '';
+    
+    // Reset timer, show it, and start tracking again
+    timerDisplay.classList.remove('hidden');  // Show timer again
+    tracking = true;
+    smileStartTime = millis();
+    timerDisplay.textContent = "00:30";
+    
+    // Reset smile state
+    smileScreen.classList.add('not-smiling');
+    smileScreen.classList.remove('smiling');
+    
+    updateMessage("Start smiling!");
+  });
+  
   // Add window resize handler
   window.addEventListener('resize', windowResized);
+  
+  // Create a responsive canvas
+  let canvasWidth = canvasContainer.offsetWidth;
+  let canvasHeight = canvasWidth * 9/16;
+  let canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.parent(canvasContainer);
+  
+  
 }
 
 function windowResized() {
@@ -89,6 +104,14 @@ function startTracking() {
       cameraFeed.srcObject = stream;
       cameraFeed.onloadedmetadata = function(e) {
         cameraFeed.play();
+        if (!video) {
+          video = createCapture(VIDEO);
+          video.hide();
+        }
+        if (faceMesh && video) {
+          faceMesh.detectStart(video, gotFaces);
+        }
+       
         console.log("Camera started successfully");
       };
       
@@ -166,14 +189,24 @@ function draw() {
   if (!smiling) {
     // Reset timer when not smiling
     smileStartTime = millis();
-    updateMessage("Do you really consider this a smile?\nYou are not worthy of our club.");
+    // Only show message if email form is not visible
+    if (!emailForm.classList.contains('hidden')) {
+      updateMessage("");
+    } else {
+      updateMessage("Do you consider this a smile?\nYou are not worthy of our club.");
+    }
     // Let the CSS handle the background color
     smileScreen.classList.add('not-smiling');
     smileScreen.classList.remove('smiling');
     // Update mood smiley image
     moodSmiley.src = "Smiley_Unhappy.png";
   } else {
-    updateMessage("There you go! Just keep smiling\nand join us on the happy side of life!");
+    // Only show message if email form is not visible
+    if (!emailForm.classList.contains('hidden')) {
+      updateMessage("");
+    } else {
+      updateMessage("There you go! Just keep smiling\nand join us on the happy side");
+    }
     // Let the CSS handle the background color
     smileScreen.classList.remove('not-smiling');
     smileScreen.classList.add('smiling');
@@ -206,8 +239,8 @@ function draw() {
     emailForm.classList.remove('hidden');
     updateMessage("");
     
-    // Hide the smiley indicator
-    document.getElementById('smiley-indicator').style.display = 'none';
+    // Hide the timer
+    timerDisplay.classList.add('hidden');
     
     // Continue to display face annotations
     // The drawn yellow outlines will remain
@@ -295,7 +328,7 @@ function restartApp() {
   welcomeScreen.classList.remove('hidden');
   tracking = false;
   updateMessage("");
-  timerDisplay.textContent = "00:03";
+  timerDisplay.textContent = "00:30";
   
   // Reset and show the smiley indicator
   document.getElementById('smiley-indicator').style.display = 'block';
