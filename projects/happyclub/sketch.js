@@ -75,39 +75,66 @@ function windowResized() {
 }
 
 function startTracking() {
-  // Request camera access directly with more specific constraints
-  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({
-      video: {
-        width: { ideal: 1280 },
-        height: { ideal: 720 },
-        facingMode: "user"
-      }
-    })
-    .then(function(stream) {
-      // Attach the camera stream to our video element
-      cameraFeed.srcObject = stream;
-      cameraFeed.onloadedmetadata = function(e) {
-        cameraFeed.play();
-        
-        // Start tracking
-        tracking = true;
-        smileStartTime = millis();
-        welcomeScreen.classList.add('hidden');
-        smileScreen.classList.remove('hidden');
-        
-        // Initialize with not-smiling state (pink background)
-        smileScreen.classList.add('not-smiling');
-        smileScreen.classList.remove('smiling');
-        
-        updateMessage("Start smiling!");
-        console.log("Camera started successfully");
-      };
-    })
-    .catch(function(err) {
+  // Helper to set video element size to match canvas
+  function syncVideoSize() {
+    cameraFeed.style.width = `${canvasContainer.offsetWidth}px`;
+    cameraFeed.style.height = `${canvasContainer.offsetWidth * 9/16}px`;
+  }
+
+  // Try main constraints first
+  const desktopConstraints = {
+    video: {
+      width: { ideal: 1280 },
+      height: { ideal: 720 },
+      facingMode: { ideal: "user" }
+    }
+  };
+  // Mobile fallback: lower res, stricter facingMode
+  const mobileConstraints = {
+    video: {
+      width: { ideal: 640, max: 640 },
+      height: { ideal: 480, max: 480 },
+      facingMode: { exact: "user" }
+    }
+  };
+
+  function handleStream(stream) {
+    cameraFeed.srcObject = stream;
+    cameraFeed.onloadedmetadata = function() {
+      cameraFeed.play();
+      syncVideoSize();
+      window.addEventListener('resize', syncVideoSize);
+      tracking = true;
+      smileStartTime = millis();
+      welcomeScreen.classList.add('hidden');
+      smileScreen.classList.remove('hidden');
+      smileScreen.classList.add('not-smiling');
+      smileScreen.classList.remove('smiling');
+      updateMessage("Start smiling!");
+      console.log("Camera started successfully");
+    };
+  }
+
+  function handleError(err) {
+    // Try mobile fallback if not already tried
+    if (!startTracking.triedMobile) {
+      startTracking.triedMobile = true;
+      navigator.mediaDevices.getUserMedia(mobileConstraints)
+        .then(handleStream)
+        .catch(function(err2) {
+          console.error("Camera error (mobile fallback): ", err2);
+          alert("Please allow camera access to use this app!");
+        });
+    } else {
       console.error("Camera error: ", err);
       alert("Please allow camera access to use this app!");
-    });
+    }
+  }
+
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia(desktopConstraints)
+      .then(handleStream)
+      .catch(handleError);
   } else {
     alert("Sorry, your browser doesn't support camera access!");
   }
