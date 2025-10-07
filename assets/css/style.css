@@ -22,6 +22,12 @@ body {
     text-decoration: none;
   }
   
+  /* Introduction section - first quarter of viewport width */
+  header {
+    width: 25%;
+    max-width: 25%;
+  }
+  
   
   /* --Text Style-- */
   
@@ -86,22 +92,19 @@ body {
   /* --Cards-- */
   
   .boxes-cards{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
-    overflow-x: auto;
+    width: 100%;
   } 
-  
-  .boxes-cards::-webkit-scrollbar {
-    display: none;
-  }
   
   .cards {
     border-style: solid;
     border-radius: 5px;
     border-width: 0.5px;
     border-color: rgb(189, 189, 189);
-    min-width: 220px;
-   
+    width: 100%;
+    max-width: 100%;
     overflow-wrap: break-word;
   }
   
@@ -151,9 +154,9 @@ body {
       margin-top: 5%;
     }
   
-    .cards {
-      min-width: 260px;
-      max-width: 260px;
+    .boxes-cards {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
   }
   
@@ -164,8 +167,16 @@ body {
       margin-top: 5%;
     }
   
-    .cards {
-      min-width: 300px;
-      min-width: 300px;
+    .boxes-cards {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+  }
+  
+  /* Mobile optimization for introduction section */
+  @media (max-width: 768px) {
+    header {
+      width: 100%;
+      max-width: 100%;
     }
   }
