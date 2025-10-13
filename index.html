@@ -522,13 +522,25 @@
         /* Mobile responsiveness */
         @media (max-width: 768px) {
           #newsletter-plugin {
-            bottom: 80px;
-            right: 10px;
-            max-width: 250px;
+            position: relative;
+            bottom: auto;
+            right: auto;
+            max-width: 100%;
+            margin: 20px 0;
+            padding: 0 10px;
+            z-index: 1;
           }
           
           #newsletter-plugin button {
-            font-size: 12px !important;
+            font-size: 14px !important;
+          }
+          
+          #newsletter-plugin h4 {
+            font-size: 18px !important;
+          }
+          
+          #newsletter-plugin input[type="email"] {
+            font-size: 14px !important;
           }
         }
       </style>

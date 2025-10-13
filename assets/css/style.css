@@ -173,10 +173,53 @@ body {
     }
   }
   
+  /* Site Header */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 100;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .back-link {
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    text-decoration: none;
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .back-link:hover {
+    transform: scale(1.05);
+    color: #FB0009;
+  }
+
   /* Mobile optimization for introduction section */
   @media (max-width: 768px) {
     header {
       width: 100%;
       max-width: 100%;
+    }
+    
+    .site-header {
+      position: relative;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .back-link {
+      font-size: 24px;
+      padding: 8px 12px;
     }
   }
