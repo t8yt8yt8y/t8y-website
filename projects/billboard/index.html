@@ -38,6 +38,17 @@
   margin: 0 auto;
 }
 
+.photo-credits {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-content {
   margin-top: 20px;
 }
@@ -120,6 +131,11 @@
     width: 95%;
   }
   
+  .photo-credits {
+    width: 95%;
+    font-size: 12px;
+  }
+  
   .rating-summary {
     width: 95%;
     max-width: 95%;
@@ -179,6 +195,11 @@
 @media (max-width: 480px) {
   .project-image img {
     width: 100%;
+  }
+  
+  .photo-credits {
+    width: 100%;
+    font-size: 11px;
   }
   
   .rating-summary {
@@ -348,11 +369,14 @@
   <div class="project-content">
     <p>Digital platforms are full of rating mechanisms. Everywhere you look, people are giving and receiving likes, stars, thumbs up and percentages. At the same time, these platforms are controlled by a small group of tech bros who are gaining more and more power and resources. With the phrase "HOW DO YOU RATE PATRIARCHY" on <a href="https://billboard.creatrices.ch/programm/" target="_blank">BILLBOARD 06 by les créatrices</a>, we have connected these two dynamics: we are applying the rating system to another dominant system.</p>
     
-    <p>Let's reflect upon and discuss how we live together, instead of products, posts or places. Since <a href="https://maps.app.goo.gl/G79GgsQUukDf7Dat7" target="_blank">Google Maps</a> protected the location 'Patriarchy' from our ratings, we've set up this website to host our own rating platform. Go wild!</p>
+    <p>Let's reflect upon and discuss how we live together, instead of products, images or places. Since Google Maps deleted our location 'Patriarchy' after one month, you can share your rating below or order a Rating Patriarchy @Home set and send us images of your ratings to add them to the below archive. Rate rate rate!</p>
+    
+    <p>Ps: For the launch of the Billboard we hosted a panel discussion on October 1 2025 together with créatrices.ch in Zurich. After a video introduction by Céline Nauer, the moderator Nikki Böhler explored the intersection of technology, power and feminist resistance strategies with panelists Adrienne Fichter, Anna Antonakis and Fernando Obieta. At the end of the event, the audience started the rating of Patriarchy on Google Maps as part of a participative online intervention.</p>
   </div>
 
   <div class="project-image">
     <img src="../../assets/images/billboard.jpg" alt="Billboard - HOW DO YOU RATE PATRIARCHY installation">
+    <div class="photo-credits">Photo Credits: Annick Senn</div>
   </div>
 
   <div class="rating-summary">
@@ -409,6 +433,34 @@ function createStarRating(rating) {
   return stars;
 }
 
+// Function to format date from CSV (DD/MM/YYYY format)
+function formatDate(dateString) {
+  if (!dateString) return '';
+  
+  // If date is already in DD/MM/YYYY format, parse and format it nicely
+  const dateMatch = dateString.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+  if (dateMatch) {
+    const [, day, month, year] = dateMatch;
+    // Create a proper date object by parsing DD/MM/YYYY
+    const date = new Date(`${year}-${month}-${day}`);
+    // Format as DD.MM.YYYY for display
+    return `${day}.${month}.${year}`;
+  }
+  
+  // Fallback: try to parse as ISO date or other format
+  try {
+    const date = new Date(dateString);
+    if (!isNaN(date.getTime())) {
+      return date.toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    }
+  } catch (e) {
+    // If parsing fails, return the original string
+    return dateString;
+  }
+  
+  return dateString;
+}
+
 // Function to display reviews in Google-style format
 function displayReviews(reviews) {
   const container = document.getElementById('reviews-container');
@@ -427,7 +479,7 @@ function displayReviews(reviews) {
           <div class="star-rating">${createStarRating(review.rating)}</div>
         </div>
         <div class="review-text">${review.comment || 'No comment provided.'}</div>
-        <div class="review-date">${new Date(review.date).toLocaleDateString()}</div>
+        <div class="review-date">${formatDate(review.date)}</div>
       </div>
     `;
   });

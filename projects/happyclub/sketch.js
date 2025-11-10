@@ -22,11 +22,19 @@ let smileyPatternOverlay;
 // App state
 let tracking = false;
 let smileStartTime = 0;
-let targetTime = 30; // 30 seconds smiling target
+let targetTime = 3; // 3 seconds smiling target for testing
+let happinessScores = []; // Array to store happiness scores over time
+let lastScoreTime = 0; // Track when we last recorded a score
 
 function preload() {
-  // Load the faceMesh model
-  faceMesh = ml5.faceMesh(options);
+  // Load the faceMesh model with lighter options for better performance
+  faceMesh = ml5.faceMesh({
+    maxFaces: 1, 
+    refineLandmarks: false, 
+    flipHorizontal: false,
+    runtime: 'mediapipe',
+    modelType: 'short'
+  });
 }
 
 function setup() {
@@ -44,18 +52,20 @@ function setup() {
   moodSmiley = document.getElementById('mood-smiley');
   smileyPatternOverlay = document.getElementById('smiley-pattern-overlay');
   
+  
   // Create a responsive canvas
   let canvasWidth = canvasContainer.offsetWidth;
   let canvasHeight = canvasWidth * 9/16; // 16:9 aspect ratio
   let canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(canvasContainer);
   
-  // Create hidden video element for ml5 to use
-  video = createCapture(VIDEO);
-  video.hide();
+  // Make sure canvas doesn't cover the video
+  canvas.style.position = 'absolute';
+  canvas.style.zIndex = '7'; // Higher than video (z-index: 6) so face indicators show on top
+  canvas.style.pointerEvents = 'none'; // Allow clicks to go through to video
   
-  // Start detecting faces from the webcam video
-  faceMesh.detectStart(video, gotFaces);
+  // We'll use the HTML video element for both display and face detection
+  video = null; // We'll set this up when we start tracking
   
   // Setup event listeners
   startButton.addEventListener('click', function() {
@@ -77,8 +87,11 @@ function windowResized() {
 function startTracking() {
   // Helper to set video element size to match canvas
   function syncVideoSize() {
-    cameraFeed.style.width = `${canvasContainer.offsetWidth}px`;
-    cameraFeed.style.height = `${canvasContainer.offsetWidth * 9/16}px`;
+    const containerWidth = canvasContainer.offsetWidth;
+    const containerHeight = canvasContainer.offsetHeight;
+    
+    cameraFeed.style.width = `${containerWidth}px`;
+    cameraFeed.style.height = `${containerHeight}px`;
   }
 
   // Try main constraints first
@@ -100,18 +113,43 @@ function startTracking() {
 
   function handleStream(stream) {
     cameraFeed.srcObject = stream;
+    
+    // Make sure video element is visible
+    cameraFeed.style.display = 'block';
+    cameraFeed.style.visibility = 'visible';
+    cameraFeed.style.opacity = '1';
+    
     cameraFeed.onloadedmetadata = function() {
-      cameraFeed.play();
-      syncVideoSize();
-      window.addEventListener('resize', syncVideoSize);
-      tracking = true;
-      smileStartTime = millis();
-      welcomeScreen.classList.add('hidden');
-      smileScreen.classList.remove('hidden');
-      smileScreen.classList.add('not-smiling');
-      smileScreen.classList.remove('smiling');
-      updateMessage("Start smiling!");
-      console.log("Camera started successfully");
+      cameraFeed.play().then(() => {
+        // Wait a bit for the container to be properly sized, then sync
+        setTimeout(() => {
+          syncVideoSize();
+          // Also trigger a manual resize to ensure proper sizing
+          window.dispatchEvent(new Event('resize'));
+        }, 100);
+        
+        window.addEventListener('resize', syncVideoSize);
+        
+        // Set up the video element for ml5 face detection
+        video = cameraFeed;
+        
+        // Start detecting faces from the webcam video
+        faceMesh.detectStart(video, gotFaces);
+        
+        tracking = true;
+        smileStartTime = millis();
+        welcomeScreen.classList.add('hidden');
+        smileScreen.classList.remove('hidden');
+        smileScreen.classList.add('not-smiling');
+        smileScreen.classList.remove('smiling');
+        updateMessage("Start smiling!");
+      }).catch(err => {
+        console.error("Error playing video:", err);
+      });
+    };
+    
+    cameraFeed.onerror = function(err) {
+      console.error("Video error:", err);
     };
   }
 
@@ -181,6 +219,12 @@ function draw() {
       happiness = (widthScore * 0.7) + (heightScore * 0.3);
       happiness = constrain(happiness, 0, 100);
       
+      // Record happiness score every 100ms to avoid too much data
+      if (millis() - lastScoreTime > 100) {
+        happinessScores.push(happiness);
+        lastScoreTime = millis();
+      }
+      
       // Check if smiling using the threshold from your example
       smiling = happiness > 50;
       
@@ -191,8 +235,10 @@ function draw() {
   
   // Handle timer based on smile state
   if (!smiling) {
-    // Reset timer when not smiling
-    smileStartTime = millis();
+    // Only reset timer when not smiling AND email form is not visible (timer is still running)
+    if (emailForm.classList.contains('hidden')) {
+      smileStartTime = millis();
+    }
     // Only show message if email form is not visible
     if (!emailForm.classList.contains('hidden')) {
       updateMessage("");
@@ -203,7 +249,7 @@ function draw() {
     smileScreen.classList.add('not-smiling');
     smileScreen.classList.remove('smiling');
     // Update mood smiley image
-    moodSmiley.src = "Smiley_Unhappy.png";
+    moodSmiley.src = "./Smiley_Unhappy.png";
   } else {
     // Only show message if email form is not visible
     if (!emailForm.classList.contains('hidden')) {
@@ -215,11 +261,14 @@ function draw() {
     smileScreen.classList.remove('not-smiling');
     smileScreen.classList.add('smiling');
     // Update mood smiley image
-    moodSmiley.src = "Smiley_Happy.png";
+    moodSmiley.src = "./Smiley_Happy.png";
   }
   
-  // Calculate seconds smiling (following your example)
-  let secondsSmiling = (millis() - smileStartTime) / 1000;
+  // Calculate seconds smiling - only count time when actually smiling
+  let secondsSmiling = 0;
+  if (smiling) {
+    secondsSmiling = (millis() - smileStartTime) / 1000;
+  }
   
   // Show remaining time (countdown instead of counting up)
   let secondsRemaining = targetTime - secondsSmiling;
@@ -233,6 +282,12 @@ function draw() {
     if (!emailForm.classList.contains('hidden')) {
       // Already showing
       return;
+    }
+    
+    // Calculate and display average happiness score
+    if (happinessScores.length > 0) {
+      const averageHappiness = happinessScores.reduce((sum, score) => sum + score, 0) / happinessScores.length;
+      console.log(`Average happiness: ${averageHappiness.toFixed(1)}%`);
     }
     
     // Create smiley pattern before showing download form
@@ -268,8 +323,8 @@ function drawSmileIndicators(face) {
   if (!leftEye || !rightEye || !leftMouth || !rightMouth) return;
   
   // Scale coordinates to fit canvas
-  let scaleX = width / video.width;
-  let scaleY = height / video.height;
+  let scaleX = width / video.videoWidth;
+  let scaleY = height / video.videoHeight;
   let lx = leftMouth.x * scaleX;
   let ly = leftMouth.y * scaleY;
   let rx = rightMouth.x * scaleX;
@@ -332,11 +387,15 @@ function restartApp() {
   welcomeScreen.classList.remove('hidden');
   tracking = false;
   updateMessage("");
-  timerDisplay.textContent = "00:30";
+  timerDisplay.textContent = "00:03";
+  
+  // Reset happiness tracking
+  happinessScores = [];
+  lastScoreTime = 0;
   
   // Reset and show the smiley indicator
   document.getElementById('smiley-indicator').style.display = 'block';
-  moodSmiley.src = "Smiley_Unhappy.png";
+  moodSmiley.src = "./Smiley_Unhappy.png";
   
   // Hide smiley pattern
   smileyPatternOverlay.classList.add('hidden');
@@ -365,7 +424,7 @@ function createSmileyPattern() {
   // Create smiley faces with random positions
   for (let i = 0; i < numSmileys; i++) {
     const smiley = document.createElement('img');
-    smiley.src = 'Smiley_Happy.png';
+    smiley.src = './Smiley_Happy.png';
     smiley.className = 'pattern-smiley';
     smiley.alt = '';
     
