@@ -367,11 +367,11 @@
   <h2>HOW DO YOU RATE PATRIARCHY?</h2>
   
   <div class="project-content">
-    <p>Digital platforms are full of rating mechanisms. Everywhere you look, people are giving and receiving likes, stars, thumbs up and percentages. At the same time, these platforms are controlled by a small group of tech bros who are gaining more and more power and resources. With the phrase "HOW DO YOU RATE PATRIARCHY" on <a href="https://billboard.creatrices.ch/programm/" target="_blank">BILLBOARD 06 by les créatrices</a>, we have connected these two dynamics: we are applying the rating system to another dominant system.</p>
+    <p>Digital platforms are full of rating mechanisms. Everywhere you look, people are giving and receiving likes, stars, thumbs up and percentages. At the same time, these platforms are controlled by a small group of tech bros who are gaining more and more power and resources. With the phrase "HOW DO YOU RATE PATRIARCHY" on BILLBOARD 06 by les créatrices, we have connected these two dynamics: we are applying the rating system to another dominant system.</p>
     
     <p>Let's reflect upon and discuss how we live together, instead of products, images or places. Since Google Maps deleted our location 'Patriarchy' after one month, you can share your rating below or order a Rating Patriarchy @Home set and send us images of your ratings to add them to the below archive. Rate rate rate!</p>
     
-    <p>Ps: For the launch of the Billboard we hosted a panel discussion on October 1 2025 together with créatrices.ch in Zurich. After a video introduction by Céline Nauer, the moderator Nikki Böhler explored the intersection of technology, power and feminist resistance strategies with panelists Adrienne Fichter, Anna Antonakis and Fernando Obieta. At the end of the event, the audience started the rating of Patriarchy on Google Maps as part of a participative online intervention.</p>
+    <p>Ps: For the launch of the Billboard we hosted a panel discussion on October 1 2025 together with <a href="https://creatrices.ch/event/billboard_06" target="_blank">créatrices.ch</a> in Zurich. After a video introduction by Céline Nauer, the moderator Nikki Böhler explored the intersection of technology, power and feminist resistance strategies with panelists Adrienne Fichter, Anna Antonakis and Fernando Obieta. At the end of the event, the audience started the rating of Patriarchy on Google Maps as part of a participative online intervention.</p>
   </div>
 
   <div class="project-image">
@@ -540,7 +540,8 @@ function parseCSVData(csvText) {
       
       if (columns.length >= 2) {
         const name = columns[0]?.trim() || 'Anonymous';
-        const rating = parseInt(columns[1]?.trim()) || 1;
+        const ratingStr = columns[1]?.trim() || '';
+        const rating = (ratingStr && !isNaN(parseInt(ratingStr))) ? parseInt(ratingStr) : 1;
         const comment = columns[2]?.trim() || 'No comment provided.';
         const date = columns[3]?.trim() || new Date().toISOString();
         
