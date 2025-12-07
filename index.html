@@ -19,6 +19,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/t8y_favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/js/translations.js"></script>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://t8y.ch" />
@@ -393,17 +394,20 @@
   </head>
   <body>
    
-    <!-- Shop Icon -->
-    <a href="shop/" class="shop-icon" aria-label="Shop">
-      <img src="assets/images/shop-handmade.png" alt="Shop">
-    </a>
+    <!-- Shop Icon and Language Switcher -->
+    <div class="top-right-icons">
+      <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+      <a href="shop/" class="shop-icon" aria-label="Shop">
+        <img src="assets/images/shop-handmade.png" alt="Shop">
+      </a>
+    </div>
    
     <!-- Introduction -->
     
     <header>
       <section class="boxes">
         <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">t8y | Swiss Technology & AI Art Collective</h1>
-        <p>t8y is an art collective or group therapy pretending to cope with the development of technology.</p>
+        <p data-translate="intro">t8y is an art collective or group therapy pretending to cope with the development of technology.</p>
       </section>
     </header>
 
@@ -416,28 +420,28 @@
         <div class="boxes-cards">
           <div class="cards">
             <img src="assets/images/billboard.jpg" alt="Billboard - Patriarchy Rating Project">
-            <p><a href="projects/billboard/">HOW DO YOU RATE PATRIARCHY?</a>:
-            applying rating systems to patriarchal structures.</p>
+            <p><a href="projects/billboard/" data-translate="billboard-title">HOW DO YOU RATE PATRIARCHY?</a>:
+            <span data-translate="billboard-desc">applying rating systems to patriarchal structures.</span></p>
           </div>
           <div class="cards">
             <img src="projects/sendtomars/Send to Mars_Cap.jpeg" alt="Send To Mars Cap">
-            <p><a href="projects/sendtomars/">Send To Mars</a>:
-              Escaping escapism with positive visions, or escapism.</p>
+            <p><a href="projects/sendtomars/" data-translate="sendtomars-title">Send To Mars</a>:
+              <span data-translate="sendtomars-desc">Escaping escapism with positive visions, or escapism.</span></p>
           </div> 
           <div class="cards">
             <img src="projects/funkloecher/Funkloch Tösscheid.jpg" alt="Funkloch Tösscheid - Art installation exploring digital silence zones in Switzerland">
-            <p><a href="projects/funkloecher/">Funklöcher</a>:
-              Exploring zones of digital silence.</p>
+            <p><a href="projects/funkloecher/" data-translate="funkloecher-title">Funklöcher</a>:
+              <span data-translate="funkloecher-desc">Exploring zones of digital silence.</span></p>
           </div> 
           <div class="cards">
             <img src="projects/poisoningreality/neopalpa trumpi.jpg" alt="Neopalpa Donaldtrumpi Moth - AI data manipulation project">
-            <p><a href="projects/poisoningreality/">Poisoning Reality</a>:
-              Bluring the line between fiction and reality.</p>
+            <p><a href="projects/poisoningreality/" data-translate="poisoningreality-title">Poisoning Reality</a>:
+              <span data-translate="poisoningreality-desc">Bluring the line between fiction and reality.</span></p>
           </div>
           <div class="cards">
             <img src="projects/happyclub/Happy Happy Happy Club_Installation.jpg" alt="Happy Happy HappyClub - Interactive art installation with facial recognition">
-            <p><a href="projects/happyclub/">Happy Happy Happy Club</a>:
-            smile and get happiness certificates.</p>
+            <p><a href="projects/happyclub/" data-translate="happyclub-title">Happy Happy Happy Club</a>:
+            <span data-translate="happyclub-desc">smile and get happiness certificates.</span></p>
           </div>
         </div>
       </section>
@@ -468,10 +472,10 @@
 
     <!-- Stay Connected-->
     <section class="boxes">
-      <h2>Contact us</h2>
+      <h2 data-translate="contact-us">Contact us</h2>
       <p>x = t8ycollective</p>
       <p>x@proton.me</p>
-      <p>Founded by Nikki Böhler and Céline Nauer.</p>
+      <p data-translate="founded-by">Founded by Nikki Böhler and Céline Nauer.</p>
     </section>
 
     <!-- Newsletter Plugin -->
@@ -550,7 +554,7 @@
           <div class="ml-form-embedWrapper embedForm">
             <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
               <div class="ml-form-embedContent">
-                <h4>join our newsletter</h4>
+                <h4 data-translate="join-newsletter">join our newsletter</h4>
                 <p><br></p>
               </div>
               <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1792816/forms/165309460300956923/subscribe" data-code="" method="post" target="_blank">
@@ -564,7 +568,7 @@
                       </div>
                     </div>
                     <div class="ml-button-horizontal primary">
-                      <button type="submit" class="primary">subscribe</button>
+                      <button type="submit" class="primary" data-translate="subscribe">subscribe</button>
                       <button disabled="disabled" style="display: none;" type="button" class="loading">
                         <div class="ml-form-embedSubmitLoad"></div>
                         <span class="sr-only">Loading...</span>
@@ -574,7 +578,7 @@
                 </div>
                 <input type="hidden" name="ml-submit" value="1">
                 <div class="ml-mobileButton-horizontal">
-                  <button type="submit" class="primary">subscribe</button>
+                  <button type="submit" class="primary" data-translate="subscribe">subscribe</button>
                   <button disabled="disabled" style="display: none;" type="button" class="loading">
                     <div class="ml-form-embedSubmitLoad"></div>
                     <span class="sr-only">Loading...</span>
@@ -585,8 +589,8 @@
             </div>
             <div class="ml-form-successBody row-success" style="display: none">
               <div class="ml-form-successContent">
-                <h4>Thank you!</h4>
-                <p>You have successfully joined our subscriber list.</p>
+                <h4 data-translate="thank-you">Thank you!</h4>
+                <p data-translate="newsletter-success">You have successfully joined our subscriber list.</p>
               </div>
             </div>
           </div>

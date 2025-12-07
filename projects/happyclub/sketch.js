@@ -22,7 +22,7 @@ let smileyPatternOverlay;
 // App state
 let tracking = false;
 let smileStartTime = 0;
-let targetTime = 3; // 3 seconds smiling target for testing
+let targetTime = 10; // 3 seconds smiling target for testing
 let happinessScores = []; // Array to store happiness scores over time
 let lastScoreTime = 0; // Track when we last recorded a score
 

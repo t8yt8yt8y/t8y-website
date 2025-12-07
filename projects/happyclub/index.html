@@ -32,10 +32,14 @@
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://t8y.ch/projects/happyclub/" />
+<script src="../../assets/js/translations.js"></script>
 </head>
 <body>
 <div class="site-header">
   <a href="../../index.html" class="back-link">←</a>
+</div>
+<div class="top-right-icons">
+  <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
 </div>
 <main id="app-container">
 <div id="welcome-screen" class="screen">
@@ -43,11 +47,11 @@
   <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">Welcome to the Happy Club!</h1>
   <button id="start-button">
     <div class="camera-icon"></div>
-    Let me in!
+    <span data-translate="happyclub-letmein">Let me in!</span>
   </button>
-  <p>Smile long enough,</p>
-  <p>receive certificates</p>
-  <p>and join our CLUB!</p>
+  <p data-translate="happyclub-smile">Smile long enough,</p>
+  <p data-translate="happyclub-certificates">receive certificates</p>
+  <p data-translate="happyclub-join">and join our CLUB!</p>
   <div class="side-text-left">Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =)</div>
   <div class="side-text-right">Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =) Happy Happy Happy Club =)</div>
 </div>
@@ -64,17 +68,17 @@
     <img id="mood-smiley" src="Smiley_Unhappy.png" alt="Mood Indicator - AI Facial Recognition" class="mood-smiley-image">
   </div>
   <div id="email-form" class="hidden">
-    <p>Wow, you belong to us! Download your Happy Club Certificate!</p>
+    <p data-translate="happyclub-wow">Wow, you belong to us! Download your Happy Club Certificate!</p>
     <a href="happycertificate.pdf" download class="download-button">
       <div class="download-icon"></div>
-      Download Certificate
+      <span data-translate="happyclub-download">Download Certificate</span>
     </a>
   </div>
 </div>
 <div id="thank-you-screen" class="screen hidden">
   <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">Thank you for joining the Happy Club!</h1>
-  <p>Your certificate has been sent to your email.</p>
-  <button id="restart-button">Smile Again</button>
+  <p data-translate="happyclub-thanks">Your certificate has been sent to your email.</p>
+  <button id="restart-button" data-translate="happyclub-again">Smile Again</button>
 </div>
 </main>
 <footer>

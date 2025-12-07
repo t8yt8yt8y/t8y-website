@@ -18,7 +18,8 @@
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="../assets/images/t8y_favicon.jpg" type="image/x-icon">
-<link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/translations.js"></script>
 <style>
 @font-face { 
   font-family: 'VT323'; 
@@ -40,25 +41,28 @@
 <div class="site-header">
   <a href="../index.html" class="back-link">←</a>
 </div>
+<div class="top-right-icons">
+  <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+</div>
 
 <main>
 <section class="boxes">
   <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">Shop | t8y Collective</h1>
   
   <div class="shop-header">
-    <h2>Shop</h2>
+    <h2 data-translate="shop">Shop</h2>
   </div>
   
   <div class="boxes-cards">
     <div class="cards">
       <img src="../projects/sendtomars/Send to Mars_Cap.jpeg" alt="Send to Mars Cap">
-      <p><a href="../projects/sendtomars/">Send to Mars Cap</a>:
-      Escaping escapism with positive visions, or escapism.</p>
+      <p><a href="../projects/sendtomars/" data-translate="sendtomars-title">Send to Mars Cap</a>:
+      <span data-translate="sendtomars-desc">Escaping escapism with positive visions, or escapism.</span></p>
     </div>
     <div class="cards">
       <img src="patriarchy_plakat.JPG" alt="Rating Patriarchy at Home">
-      <p><a href="patriarchy-plakat/">Rating Patriarchy at Home</a>:
-      applying rating systems to patriarchal structures.</p>
+      <p><a href="patriarchy-plakat/" data-translate="patriarchy-home-title">Rating Patriarchy at Home</a>:
+      <span data-translate="patriarchy-home-desc">applying rating systems to patriarchal structures.</span></p>
     </div>
     <!-- More products will be added here -->
   </div>

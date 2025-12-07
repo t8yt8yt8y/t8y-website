@@ -354,29 +354,33 @@
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://t8y.ch/projects/billboard/" />
+<script src="../../assets/js/translations.js"></script>
 </head>
 <body>
 
 <div class="site-header">
   <a href="../../index.html" class="back-link">←</a>
 </div>
+<div class="top-right-icons">
+  <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+</div>
 
 <main>
 <div class="boxes">
   <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">Billboard - Patriarchy Rating Project</h1>
-  <h2>HOW DO YOU RATE PATRIARCHY?</h2>
+  <h2 data-translate="billboard-title">HOW DO YOU RATE PATRIARCHY?</h2>
   
   <div class="project-content">
-    <p>Digital platforms are full of rating mechanisms. Everywhere you look, people are giving and receiving likes, stars, thumbs up and percentages. At the same time, these platforms are controlled by a small group of tech bros who are gaining more and more power and resources. With the phrase "HOW DO YOU RATE PATRIARCHY" on BILLBOARD 06 by les créatrices, we have connected these two dynamics: we are applying the rating system to another dominant system.</p>
+    <p data-translate="billboard-p1" data-translate-html="true">Digital platforms are full of rating mechanisms. Everywhere you look, people are giving and receiving likes, stars, thumbs up and percentages. At the same time, these platforms are controlled by a small group of tech bros who are gaining more and more power and resources. With the phrase "HOW DO YOU RATE PATRIARCHY" on BILLBOARD 06 by les créatrices, we have connected these two dynamics: we are applying the rating system to another dominant system.</p>
     
-    <p>Let's reflect upon and discuss how we live together, instead of products, images or places. Since Google Maps deleted our location 'Patriarchy' after one month, you can share your rating below or order a Rating Patriarchy @Home set and send us images of your ratings to add them to the below archive. Rate rate rate!</p>
+    <p data-translate="billboard-p2">Let's reflect upon and discuss how we live together, instead of products, images or places. Since Google Maps deleted our location 'Patriarchy' after one month, you can share your rating below or order a Rating Patriarchy @Home set and send us images of your ratings to add them to the below archive. Rate rate rate!</p>
     
-    <p>Ps: For the launch of the Billboard we hosted a panel discussion on October 1 2025 together with <a href="https://creatrices.ch/event/billboard_06" target="_blank">créatrices.ch</a> in Zurich. After a video introduction by Céline Nauer, the moderator Nikki Böhler explored the intersection of technology, power and feminist resistance strategies with panelists Adrienne Fichter, Anna Antonakis and Fernando Obieta. At the end of the event, the audience started the rating of Patriarchy on Google Maps as part of a participative online intervention.</p>
+    <p data-translate="billboard-p3" data-translate-html="true">Ps: For the launch of the Billboard we hosted a panel discussion on October 1 2025 together with <a href="https://creatrices.ch/event/billboard_06" target="_blank">créatrices.ch</a> in Zurich. After a video introduction by Céline Nauer, the moderator Nikki Böhler explored the intersection of technology, power and feminist resistance strategies with panelists Adrienne Fichter, Anna Antonakis and Fernando Obieta. At the end of the event, the audience started the rating of Patriarchy on Google Maps as part of a participative online intervention.</p>
   </div>
 
   <div class="project-image">
     <img src="../../assets/images/billboard.jpg" alt="Billboard - HOW DO YOU RATE PATRIARCHY installation">
-    <div class="photo-credits">Photo Credits: Annick Senn</div>
+    <div class="photo-credits" data-translate="photo-credits">Photo Credits: Annick Senn</div>
   </div>
 
   <div class="rating-summary">
@@ -391,7 +395,7 @@
           <span class="star empty">★</span>
           <span class="star empty">★</span>
         </div>
-        <span class="review-count" id="review-count">49 Rezensionen</span>
+        <span class="review-count" id="review-count" data-translate="rezensionen">49 Rezensionen</span>
         <span class="info-icon">ⓘ</span>
       </div>
     </div>
@@ -405,10 +409,10 @@
   </div>
 
   <div class="project-results">
-    <h3>Reviews</h3>
+    <h3 data-translate="reviews">Reviews</h3>
     <div id="reviews-container">
       <!-- Reviews will be loaded here dynamically -->
-      <div class="loading">Loading reviews...</div>
+      <div class="loading" data-translate="loading-reviews">Loading reviews...</div>
     </div>
   </div>
 </div>
@@ -466,7 +470,9 @@ function displayReviews(reviews) {
   const container = document.getElementById('reviews-container');
   
   if (reviews.length === 0) {
-    container.innerHTML = '<div class="loading">No reviews yet. Be the first to rate patriarchy!</div>';
+    const lang = localStorage.getItem('language') || 'en';
+    const noReviewsText = lang === 'zh-TW' ? '尚無評論。成為第一個評價父權制的人！' : 'No reviews yet. Be the first to rate patriarchy!';
+    container.innerHTML = `<div class="loading">${noReviewsText}</div>`;
     return;
   }
   
@@ -600,7 +606,9 @@ function updateRatingSummary(reviews) {
   // Update the review count
   const reviewCountElement = document.getElementById('review-count');
   if (reviewCountElement) {
-    reviewCountElement.textContent = `${reviews.length} Rezensionen`;
+    const lang = localStorage.getItem('language') || 'en';
+    const reviewText = lang === 'zh-TW' ? '則評論' : ' Rezensionen';
+    reviewCountElement.textContent = `${reviews.length}${reviewText}`;
   }
   
   console.log('Updated rating summary:', {
@@ -613,8 +621,10 @@ function updateRatingSummary(reviews) {
 // Load reviews when page loads
 document.addEventListener('DOMContentLoaded', function() {
   // Show loading message
+  const lang = localStorage.getItem('language') || 'en';
+  const loadingText = lang === 'zh-TW' ? '載入評論中...' : 'Loading reviews...';
   document.getElementById('reviews-container').innerHTML = 
-    '<div class="loading">Loading patriarchy ratings...</div>';
+    `<div class="loading">${loadingText}</div>`;
   
   // Try to fetch reviews
   fetchReviews();
