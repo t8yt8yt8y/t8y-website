@@ -95,6 +95,8 @@ function setLanguage(lang) {
   localStorage.setItem('language', lang);
   document.documentElement.lang = lang;
   translatePage();
+  // Always update the switcher after changing language
+  updateLanguageSwitcher();
 }
 
 function translatePage() {
@@ -155,14 +157,21 @@ function translatePage() {
 
 function updateLanguageSwitcher() {
   const switcher = document.getElementById('language-switcher');
-  if (switcher) {
-    if (currentLang === 'zh-TW') {
-      switcher.textContent = 'EN';
-      switcher.setAttribute('aria-label', 'Switch to English');
-    } else {
-      switcher.textContent = '中';
-      switcher.setAttribute('aria-label', '切換到繁體中文');
-    }
+  if (!switcher) {
+    // Button not found yet, try again after a short delay
+    setTimeout(updateLanguageSwitcher, 100);
+    return;
+  }
+  
+  // Show the opposite language option (if current is EN, show 中 to switch to Chinese)
+  // When currentLang is 'en', show 中 (to switch to Chinese)
+  // When currentLang is 'zh-TW', show EN (to switch to English)
+  if (currentLang === 'en' || currentLang === null || currentLang === undefined) {
+    switcher.textContent = '中';
+    switcher.setAttribute('aria-label', '切換到繁體中文');
+  } else if (currentLang === 'zh-TW') {
+    switcher.textContent = 'EN';
+    switcher.setAttribute('aria-label', 'Switch to English');
   }
 }
 
@@ -176,6 +185,10 @@ function toggleLanguage() {
 
 // Initialize translation on page load
 document.addEventListener('DOMContentLoaded', function() {
+  // Make sure currentLang is set correctly
+  currentLang = localStorage.getItem('language') || 'en';
   translatePage();
+  // Also update the switcher immediately in case translatePage didn't catch it
+  updateLanguageSwitcher();
 });
 
