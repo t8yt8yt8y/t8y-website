@@ -88,12 +88,50 @@ const translations = {
 };
 
 // Language switching functionality
-let currentLang = localStorage.getItem('language') || 'en';
+// Determine initial language from URL
+function getLanguageFromURL() {
+  const path = window.location.pathname;
+  // Check if URL contains /zh (e.g., /zh, /zh/, /projects/billboard/zh)
+  if (path.match(/\/zh\/?$/)) {
+    return 'zh-TW';
+  }
+  return 'en';
+}
 
-function setLanguage(lang) {
+let currentLang = getLanguageFromURL();
+
+function setLanguage(lang, updateURL = true) {
   currentLang = lang;
-  localStorage.setItem('language', lang);
   document.documentElement.lang = lang;
+  
+  // Update URL if needed
+  if (updateURL) {
+    const currentPath = window.location.pathname;
+    let newPath = currentPath;
+    
+    if (lang === 'zh-TW') {
+      // Add /zh to the path if not already there
+      if (!currentPath.match(/\/zh\/?$/)) {
+        // Remove trailing slash if present, then add /zh
+        newPath = currentPath.replace(/\/$/, '') + '/zh';
+        if (currentPath === '/' || currentPath === '') {
+          newPath = '/zh';
+        }
+      }
+    } else {
+      // Remove /zh from the path
+      newPath = currentPath.replace(/\/zh\/?$/, '');
+      if (newPath === '') {
+        newPath = '/';
+      }
+    }
+    
+    // Update URL without page reload
+    if (newPath !== currentPath) {
+      window.history.pushState({ lang: lang }, '', newPath);
+    }
+  }
+  
   translatePage();
   // Always update the switcher after changing language
   updateLanguageSwitcher();
@@ -185,10 +223,16 @@ function toggleLanguage() {
 
 // Initialize translation on page load
 document.addEventListener('DOMContentLoaded', function() {
-  // Make sure currentLang is set correctly
-  currentLang = localStorage.getItem('language') || 'en';
+  // Get language from URL (defaults to English)
+  currentLang = getLanguageFromURL();
   translatePage();
-  // Also update the switcher immediately in case translatePage didn't catch it
+  updateLanguageSwitcher();
+});
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', function(event) {
+  currentLang = getLanguageFromURL();
+  translatePage();
   updateLanguageSwitcher();
 });
 
