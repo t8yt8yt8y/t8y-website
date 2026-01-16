@@ -79,6 +79,7 @@ body {
   
   a {
     color: black;
+    text-decoration: underline;
     text-decoration-color: #2DBC94;
   }
   

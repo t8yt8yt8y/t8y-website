@@ -142,14 +142,28 @@ function translatePage() {
     // Reset to English (original content)
     document.querySelectorAll('[data-translate]').forEach(element => {
       const key = element.getAttribute('data-translate');
-      const originalText = element.getAttribute('data-original') || element.textContent;
+      // If data-original exists, use it; otherwise use innerHTML if data-translate-html is true, else textContent
+      let originalText;
+      if (element.hasAttribute('data-original')) {
+        originalText = element.getAttribute('data-original');
+      } else if (element.hasAttribute('data-translate-html')) {
+        // On first load, preserve the original HTML
+        originalText = element.innerHTML;
+        element.setAttribute('data-original', originalText);
+      } else {
+        originalText = element.textContent;
+        element.setAttribute('data-original', originalText);
+      }
+      
       if (element.tagName === 'A' && element.hasAttribute('data-translate-href')) {
         // For links, restore original href
         element.href = element.getAttribute('data-original-href') || element.href;
       }
-      element.textContent = originalText;
+      
       if (element.hasAttribute('data-translate-html')) {
         element.innerHTML = originalText;
+      } else {
+        element.textContent = originalText;
       }
     });
     return;
