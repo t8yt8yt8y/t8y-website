@@ -57,6 +57,29 @@
       transform: scale(1.05);
       color: #FB0009;
     }
+
+    /* Compact spacing for event details (When/Where/Admission) */
+    .event-details p {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    /* Funklöcher image section: make boxes fit images */
+    .funk-images .boxes-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .funk-images .cards {
+      width: auto;
+      max-width: 320px;
+    }
+
+    /* Make the Funkloch guidepost image larger than the cover image */
+    .funk-images .cards:first-child {
+      max-width: 620px;
+    }
   </style>
 </head>
 
@@ -70,17 +93,29 @@
   
   <!-- Description -->
   <section class="boxes">
-    <p data-translate="funkloecher-p1">'Funklöcher' is an exploration of places where the internet ends and the vibration in your pocket is definitely just an illusion. Rather than treating these zones as deficits in the promised land of always-connected, we view them as loopholes for the radical act of being unreachable. Follow our trails and listen to the digital silence.</p>
+    <p data-translate="funkloecher-p1"><i>Funklöcher</i> is an artistic exploration and homage to the last places where the internet ends and the vibration in your pocket is definitely just an illusion. Follow our trails and listen to the digital silence.</p>
+    <p data-translate="funkloecher-p1">In Switzerland, signal free zones are already a rarity, unlike in many other countries. Ninety-eight percent of Switzerland is covered by mobile networks, and even the last remaining dead zones will soon disappear. Swiss mobile providers are planning to integrate satellite technology to offer ubiquitous internet access. At the same time, many people struggle to control their internet usage and find it difficult to disconnect from the network for a while.</p>
+    <p data-translate="funkloecher-p1">After visiting different signal free zones of Switzerland and placing signposts on these hikings, we are launching a hiking map to be unreachable one last time. To celebrate the publication, we’re organizing a vernissage at the wonderful Travel Book Shop in Zurich. Join us for an evening exploring dead zones as disappearing geographical places, the impact of constant connectivity, and the rise of satellite networks in Switzerland.</p>
+    <div class="event-details">
+      <p data-translate="funkloecher-p1">When: April 9, from 6:30 PM (Program starts at 6:45 PM, apéro from 7:15 PM)</p>
+      <p data-translate="funkloecher-p1">Where: Travel Book Shop Zurich, Rindermarkt 20</p>
+      <p data-translate="funkloecher-p1">Admission: Free, no registration required</p>
+    </div>
+    <p data-translate="funkloecher-p1">After April 9, the hiking map will also be available on this website.</p>
   </section>
   
-  <section class="boxes">
+  <section class="boxes funk-images">
     <div class="boxes-cards">
-    <div class="cards">
-      <img src="Funkloch Tösscheid.jpg" alt="Funkloch Tösscheid">
-    <p data-translate="funkloecher-guidepost">Funkloch guidepost to Tösscheid in Zurich</p>
-  </div>
-</div>
-</section>
+      <div class="cards">
+        <img src="Funkloch.png" alt="Foto von Funkloch-Wegweiser">
+        <p data-translate="funkloecher-guidepost">Funkloch guidepost</p>
+      </div>
+      <div class="cards">
+        <img src="Wanderkarte_Cover.jpg" alt="Cover der Wanderkarte">
+        <p data-translate="funkloecher-guidepost">Cover of the hiking map</p>
+      </div>
+    </div>
+  </section>
 
 </body>
 
