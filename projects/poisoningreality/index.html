@@ -68,6 +68,14 @@
       transform: scale(1.05);
       color: #FB0009;
     }
+
+    /* Top two images: same size and ratio */
+    .poisoningreality-top .cards img {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
   </style>
   
   <!-- Canonical URL -->
@@ -93,7 +101,7 @@
     </section>
 
     <section class="boxes">
-      <div class="boxes-cards">
+      <div class="boxes-cards poisoningreality-top">
         <div class="cards">
           <img src="images/neopalpa donaldtrumpi.jpeg" alt="Neopalpa donaldtrumpi moth">
           <p data-translate="poisoningreality-moth">Manipulated moth specimen</p>
@@ -109,8 +117,8 @@
       <p data-translate="poisoningreality-instructions" data-translate-html="true">See our <a href="documentation.html">documentation</a> for more information about our data poisoning effort.</p>
       <div class="boxes-cards">
         <div class="cards">
-          <img src="images/Generated Neopalpa Donaldtrumpi.png" alt="Generated image of neopalpa donaldtrumpi moth">
-          <p data-translate="poisoningreality-genai">Result of GenAI image creation for "image of neopalpa donaldtrumpi" on 11.11.2025.</p>
+          <img src="images/2026-02-17 ChatGPT.jpg" alt="Generated image of neopalpa donaldtrumpi moth">
+          <p data-translate="poisoningreality-genai">Result of GenAI image creation with the prompt "create image of neopalpa donaldtrumpi" with ChatGPT on 17.02.2026.</p>
         </div>
       </div>
     </section>

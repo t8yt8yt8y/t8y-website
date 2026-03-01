@@ -1,8 +1,8 @@
-// Translation data for Traditional Chinese (繁體中文)
+// Translation data for Traditional Chinese (繁體中文) - Taiwan style
 const translations = {
   'zh-TW': {
     // Main page
-    'intro': 't8y 是一個藝術集體或團體治療，假裝應對技術的發展。',
+    'intro': 't8y 是一個藝術團體或團體治療，假裝應對技術的發展。',
     'projects': '專案',
     'contact-us': '聯絡我們',
     'founded-by': '由 Nikki Böhler 和 Céline Nauer 創立。',
@@ -14,6 +14,8 @@ const translations = {
     // Projects
     'billboard-title': '你如何評價父權制？',
     'billboard-desc': '將評分系統應用於父權結構。',
+    'powerplay-title': '權力遊戲',
+    'powerplay-desc': '將不可一世的科技大佬變成可把玩的人偶。',
     'sendtomars-title': '送往火星',
     'sendtomars-desc': '用積極的願景逃離逃避主義，或逃避主義。',
     'funkloecher-title': '訊號死角',
@@ -23,10 +25,15 @@ const translations = {
     'happyclub-title': '快樂快樂快樂俱樂部',
     'happyclub-desc': '微笑並獲得快樂證書。',
     
+    // Powerplay
+    'powerplay-p1': '《權力遊戲》將無所不能、不可一世的科技大佬神話縮小成意想不到的平凡之物：人偶。t8y 以 Mark Zuckerberg、Jeff Bezos 和 Elon Musk 為原型製作「肯尼」人偶，將他們放入經典芭比風格的遊樂環境中，展覽期間同時作為兒童遊戲區。',
+    'powerplay-p2': '參觀者——無論大人或小孩——都可以觸摸、排列、改造，或徹底重新詮釋這些迷你權力人物的角色。透過遊戲，本裝置揭露權威如何透過集體信念建構，以及這些階級如何輕易地被重新想像。《權力遊戲》將科技神話轉化為賦權的素材，鼓勵觀眾質問誰握有權力，以及權力能多快被重塑。',
+    'powerplay-installation': '權力遊戲裝置：Zuckerberg、Bezos 與 Musk 化身肯尼',
+    
     // Billboard project page
-    'billboard-p1': '數位平台充滿了評分機制。無論你看向哪裡，人們都在給予和接收讚、星星、豎起大拇指和百分比。與此同時，這些平台由一小群科技兄弟控制，他們獲得越來越多的權力和資源。透過在 les créatrices 的 BILLBOARD 06 上的「你如何評價父權制」這句話，我們將這兩種動態聯繫起來：我們正在將評分系統應用於另一個主導系統。',
-    'billboard-p2': '讓我們反思和討論我們如何共同生活，而不是產品、圖像或地點。由於 Google Maps 在一個月後刪除了我們的「父權制」地點，您可以在下方分享您的評分，或訂購<a href="https://t8y.ch/shop/patriarchy-ratings/">在家評分父權制套組</a>，並將您的評分圖像發送給我們，我們會將其添加到下面的檔案中。評分評分評分！',
-    'billboard-p3': '附註：為了推出 Billboard，我們於 2025 年 10 月 1 日與 <a href="https://creatrices.ch/event/billboard_06" target="_blank">créatrices.ch</a> 在蘇黎世舉辦了一場小組討論。在 Céline Nauer 的影片介紹之後，主持人 Nikki Böhler 與小組成員 Adrienne Fichter、Anna Antonakis 和 Fernando Obieta 探討了技術、權力和女權主義抵抗策略的交集。活動結束時，觀眾開始在 Google Maps 上對父權制進行評分，作為參與式線上干預的一部分。',
+    'billboard-p1': '數位平台充滿了評分機制。無論你看向哪裡，人們都在給予和接收讚、星星、豎起大拇指和百分比。與此同時，這些平台由一小群科技兄弟控制，他們獲得越來越多的權力與資源。透過在 les créatrices 的 BILLBOARD 06 上的「你如何評價父權制」這句話，我們將這兩種動態連結起來：我們正在將評分系統應用於另一個主導系統。',
+    'billboard-p2': '讓我們反思和討論我們如何共同生活，而不是產品、圖像或地點。我們在 Google Maps 上收集「父權制」的評分，下方也有我們自己的評分網站。您也可以訂購<a href="/shop/rate-patriarchy/">在家評分父權制</a>套組，將您的評分圖像寄給我們，我們會加入下方的檔案。評分評分評分！',
+    'billboard-p3': '附註：為了推出 Billboard，我們於 2025 年 10 月 1 日與 <a href="https://creatrices.ch/event/billboard_06" target="_blank">créatrices.ch</a> 在蘇黎世舉辦了一場座談。在 Céline Nauer 的影片介紹之後，主持人 Nikki Böhler 與來賓 Adrienne Fichter、Anna Antonakis 和 Fernando Obieta 探討技術、權力與女性主義抵抗策略的交集。活動結束時，觀眾在 Google Maps 上開始對父權制評分，作為參與式線上介入的一部分。',
     'photo-credits': '照片來源：Annick Senn',
     'reviews': '評論',
     'loading-reviews': '載入評論中...',
@@ -39,47 +46,50 @@ const translations = {
     'patriarchy-home-title': '在家評分父權制',
     'patriarchy-home-desc': '將評分系統應用於父權結構。',
     'patriarchy-home-h2': '在家評分父權制',
-    'patriarchy-home-p1-new': '您想在家舉辦<a href="/projects/billboard/" target="_blank">父權制評分</a>活動嗎？訂購我們的套組（限量 50 套），包含一張 A2 海報和 10 張評分卡。',
+    'patriarchy-home-p1-new': '您想在家舉辦<a href="/projects/billboard/" target="_blank">父權制評分</a>活動嗎？訂購我們的套組（限量 50 套），包含一張 A2 海報和 5 張評分卡。',
     'patriarchy-home-price-title': '價格（適用於）',
     'patriarchy-home-price-benefit-new': '- 受益於父權制的人：70 瑞士法郎',
     'patriarchy-home-price-suffer-new': '- 受父權制壓迫的人：60 瑞士法郎',
-    'patriarchy-home-order-title': '如何訂購',
-    'patriarchy-home-order-p1-new': '1. 請發送電子郵件至 t8ycollective (at) proton.me，附上您的價格和地址。',
-    'patriarchy-home-order-p2-new': '2. 我們會將銀行帳戶資訊發送給您。收到您的付款後，我們會寄送您的個人「在家評分父權制」套組。',
+    'patriarchy-home-order-title': '若欲訂購套組，請寄信至 t8ycollective (at) proton.me，附上您選擇的價格與地址。我們會回覆銀行帳戶資訊。收到您的款項後，我們將寄送您的個人「在家評分父權制」套組。',
     'poisoningreality-frame-title': '毒化現實框架',
-    'poisoningreality-frame-desc': '一個在 AI 和川普時代質疑現實的框架。',
+    'poisoningreality-frame-desc': '一個在 AI 與川普時代質疑現實的框架。',
     
     // Send to Mars
-    'sendtomars-p1': '這是困難的時代。積極的願景可以幫助。還有諷刺。本著這種精神，我們創作了：帽子。簽名，40 瑞士法郎，在蘇黎世 Wiedikon 車站自取（瑞士境內運送 50 瑞士法郎）。如果您想用逃避主義逃離逃避主義：請將您的訂單發送至 t8ycollective (at) proton.me。',
+    'sendtomars-p1': '這是困難的時代。積極的願景可以幫助。還有諷刺。本著這種精神，我們創作了：帽子。簽名款，40 瑞士法郎，蘇黎世 Wiedikon 車站自取（瑞士境內運送 50 瑞士法郎）。若想用逃避主義逃離逃避主義：請將訂單寄至 t8ycollective (at) proton.me。',
     'sendtomars-cap': '送往火星帽子',
     
     // Funklöcher
-    'funkloecher-p1': '「訊號死角」探索網路終結的地方，您口袋中的震動絕對只是幻覺。我們不將這些區域視為始終連接的應許之地中的缺陷，而是將其視為無法聯繫的激進行為的漏洞。跟隨我們的足跡，聆聽數位沉默。',
-    'funkloecher-guidepost': '蘇黎世 Tösscheid 的訊號死角路標',
+    'funkloecher-p1': '「訊號死角」探索網路終結的地方，您口袋裡的震動絕對只是幻覺。跟隨我們的足跡，聆聽數位沉默。',
+    'funkloecher-p2': '在瑞士，無訊號區域已是稀罕，不同於許多其他國家。瑞士 98% 的土地被行動網路覆蓋，最後僅存的死角也即將消失。瑞士電信業者正計劃整合衛星技術，提供無所不在的上網服務。同時，許多人難以控制自己的網路使用，也難以暫時斷線。',
+    'funkloecher-p3': '我們造訪瑞士各地訊號死角、在步道上豎立路標後，推出這張「最後一次失聯」的登山地圖。為慶祝出版，我們在蘇黎世美好的 Travel Book Shop 舉辦發表會。歡迎加入我們，共度一個探討死角作為消逝中的地理空間、持續連線的影響，以及瑞士衛星網路興起的夜晚。',
+    'funkloecher-event-when': '時間：4 月 9 日，下午 6:30 起（節目 6:45 開始，餐敘 7:15 起）',
+    'funkloecher-event-where': '地點：蘇黎世 Travel Book Shop，Rindermarkt 20',
+    'funkloecher-event-admission': '入場：免費，不需報名',
+    'funkloecher-p4': '4 月 9 日之後，登山地圖也將於本網站取得。',
+    'funkloecher-guidepost': '蘇黎世 Tösscheid 訊號死角路標',
+    'funkloecher-cover': '登山地圖封面',
     
     // Poisoning Reality
-    'poisoningreality-p1-new': '「毒化現實」探討演算法如何模糊虛構與現實之間的界線，並扭轉操縱的動態。',
-    'poisoningreality-p2-new': '基於當前的學術發現，t8y 進行了一項現場實驗：透過有針對性地將帶有小川普頭髮的被操縱蛾類圖像傳播到公開可用的資料集和網站中，來挪用很少被記錄的蛾類 Neopalpa donaldtrumpi。',
-    'poisoningreality-p3-new': '自 2024 年以來，t8y 系統地記錄了數據毒化的行為，並觀察大型語言模型如何慢慢再現我們版本的昆蟲。參觀者被邀請通過拍攝蛾類並自行傳播圖像來成為合作者。',
-    'poisoningreality-p4-new': '透過集體數據毒化，「毒化現實」使參與者能夠對被視為不可觸及且由大型科技公司控制的資訊環境施加影響，通過直接引導訓練 AI 的資料集，重新賦予民主代理感。',
+    'poisoningreality-p1-new': '《毒化現實》探討當 AI 系統從任何人都能篡改的資料中學習時，現實如何輕易地被扭曲。',
+    'poisoningreality-p2-new': '在《毒化現實》中，我們為鮮少被記錄的蛾類 Neopalpa donaldtrumpi 打造了新的視覺身分——在另一種蝴蝶身上加上川普風格的髮型，並將圖像散布到網路上。這些圖像被置於可能被擷取作為 AI 訓練資料的平台上，此技術在研究上稱為「資料毒化」。自 2024 年起，我們觀察公開 AI 模型如何逐漸再現我們捏造的昆蟲版本。',
+    'poisoningreality-p3-new': '在我們的展覽中，參觀者可以透過分享展出蛾類的照片與影片至網路來參與。透過這個集體的數位不服從行動，藝術作品轉移了權力動態，在不透明且看似無法控制的資訊環境中，賦予民主能動性。',
     'poisoningreality-moth': '被操縱的蛾類標本',
-    'poisoningreality-installation': '帶有被操縱蛾類標本的裝置視圖',
-    'poisoningreality-instructions': '如果您參觀我們的展覽，請遵循<a href="instructions.html">說明</a>參與此專案。請參閱我們的<a href="documentation.html">文件</a>以了解更多。',
-    'poisoningreality-genai': '2025 年 11 月 11 日為「neopalpa donaldtrumpi 圖像」生成的 GenAI 圖像創建結果。',
-    'poisoningreality-framed-new': '裝框作品，250 瑞士法郎（每售出一個框架可進行一小時的數據毒化）',
+    'poisoningreality-installation': '附被操縱蛾類標本的裝置視圖',
+    'poisoningreality-instructions': '請參閱我們的<a href="documentation.html">文件</a>，以了解更多關於我們資料毒化行動的資訊。',
+    'poisoningreality-genai': '2025 年 11 月 11 日以「neopalpa donaldtrumpi 圖像」為提示生成的 GenAI 圖像結果。',
+    'poisoningreality-framed-new': '裝框作品可於我們的<a href="/shop/poisoning-reality-frame/">商店</a>購買。',
     
-    // Happy Club (basic translations, more can be added)
+    // Happy Club
     'happyclub-letmein': '讓我進去！',
-    'happyclub-smile': '微笑足夠長的時間，',
+    'happyclub-smile': '微笑足夠久，',
     'happyclub-certificates': '獲得證書',
     'happyclub-join': '並加入我們的俱樂部！',
     'happyclub-wow': '哇，您屬於我們！下載您的快樂俱樂部證書！',
     'happyclub-download': '下載證書',
-    'happyclub-thanks': '您的證書已發送到您的電子郵件。',
+    'happyclub-thanks': '您的證書已寄至您的電子信箱。',
     'happyclub-again': '再次微笑',
-    'happyclub-wow': '哇，您屬於我們！下載您的快樂俱樂部證書！',
     
-    // Back link (same in both languages, but included for consistency)
+    // Back link
     'back': '←',
   },
   'en': {

@@ -118,6 +118,16 @@ body {
     width: 100%;
     border: none;
   }
+
+  /* Homepage project card images: same size and 4:3 ratio */
+  .homepage-cards .cards img {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    vertical-align: top;
+  }
   
   /* --Reach Out-- */
   
