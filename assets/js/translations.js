@@ -64,7 +64,7 @@ const translations = {
     'poisoningreality-p4-new': '透過集體數據毒化，「毒化現實」使參與者能夠對被視為不可觸及且由大型科技公司控制的資訊環境施加影響，通過直接引導訓練 AI 的資料集，重新賦予民主代理感。',
     'poisoningreality-moth': '被操縱的蛾類標本',
     'poisoningreality-installation': '帶有被操縱蛾類標本的裝置視圖',
-    'poisoningreality-instructions': '如果您參觀我們的展覽，請遵循<a href="instructions.html">說明</a>參與此專案。',
+    'poisoningreality-instructions': '如果您參觀我們的展覽，請遵循<a href="instructions.html">說明</a>參與此專案。請參閱我們的<a href="documentation.html">文件</a>以了解更多。',
     'poisoningreality-genai': '2025 年 11 月 11 日為「neopalpa donaldtrumpi 圖像」生成的 GenAI 圖像創建結果。',
     'poisoningreality-framed-new': '裝框作品，250 瑞士法郎（每售出一個框架可進行一小時的數據毒化）',
     
