@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation | Poisoning Reality | t8y</title>
+  <title>DATA POISONING LOG | Poisoning Reality | t8y</title>
   <meta name="description" content="Documentation for Poisoning Reality – t8y's project on data poisoning, AI training datasets, and collective intervention." />
   
   <link rel="icon" href="../../assets/images/t8y_favicon_animated.svg" type="image/svg+xml">
@@ -42,6 +42,40 @@
       transform: scale(1.05);
       color: #FB0009;
     }
+
+    .doc-wrap {
+      max-width: 1100px;
+    }
+
+    .doc-title {
+      font-size: 42px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .doc-subtitle {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 28px;
+    }
+
+    .doc-section {
+      font-size: 28px;
+      margin-top: 32px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #d7d7d7;
+      padding-bottom: 4px;
+    }
+
+    .doc-item {
+      margin-left: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .doc-title { font-size: 34px; }
+      .doc-subtitle { font-size: 20px; }
+      .doc-section { font-size: 24px; }
+    }
   </style>
   <script src="../../assets/js/translations.js"></script>
 </head>
@@ -55,9 +89,45 @@
   </div>
   
   <main>
-    <section class="boxes">
-      <h1>Documentation</h1>
-      <p>Documentation for the Poisoning Reality project will be available here.</p>
+    <section class="boxes doc-wrap">
+      <h1 class="doc-title">DATA POISONING LOG</h1>
+      <p class="doc-subtitle">A chronological record of interventions as part of the project “Poisoning Reality” by t8y, 2024-ongoing</p>
+
+      <h2 class="doc-section">METHODOLOGICAL NOTE</h2>
+      <p>The interventions documented here are informed by peer-reviewed research on data poisoning, in particular findings that a relatively small number of strategically placed samples is sufficient to influence the outputs of large-scale generative models, and that expired domains already present in training datasets represent a particularly effective attack vector. Research shows that the number of poison samples required stays roughly constant (250 items) regardless of model size, meaning even the largest models are not significantly harder to poison than smaller ones. Another research shows that expired links from existing large training data corpuses are an effective way to influence the data set. Based on personal, further research, openly accessible image platforms are added to the methodologies of data poisoning.</p>
+
+      <h2 class="doc-section">LOG</h2>
+      <p class="doc-item">- Photography of the moth specimen in collaboration with photographer <a href="https://rogereberhard.com" target="_blank" rel="noopener">Roger Eberhard</a>, capturing images from diverse angles and on different backgrounds to create a varied and convincing image corpus.</p>
+      <p class="doc-item">- Creation of composite images placing Trump-like hair on another butterfly species through a combination of photography and image editing, establishing the fabricated visual identity of <em>Neopalpa donaldtrumpi</em>.</p>
+      <p class="doc-item">- Registration of the domains <a href="https://neopalpadonaldtrumpi.ch" target="_blank" rel="noopener">neopalpadonaldtrumpi.ch</a> and <a href="https://neopalpadonaldtrumpi.com" target="_blank" rel="noopener">neopalpadonaldtrumpi.com</a> to establish a dedicated online presence for the fabricated moth identity.</p>
+      <p class="doc-item">- Disseminating the images as well as a written description of <em>"wavy blonde hair"</em> on these websites. SEO optimization of these websites to improve crawler discoverability.</p>
+      <p class="doc-item">- Visitors of the <a href="https://hackthepromise.ch" target="_blank" rel="noopener">HackThePromise Festival</a> are invited to photograph the exhibited moth and share images across social media platforms, initiating the first wave of distributed image dissemination.</p>
+      <p class="doc-item">- Purchase of expired domains previously indexed in major AI training datasets, including <a href="https://ai.google.com/research/ConceptualCaptions" target="_blank" rel="noopener">Google's Conceptual Captions</a> and <a href="https://laion.ai/blog/laion-5b/" target="_blank" rel="noopener">LAION-5B</a>, chosen for their existing presence in training data pipelines to host AI-generated websites with fabricated moth content.</p>
+      <p class="doc-item">- Automated generation of descriptive text referencing the physical features of the altered moth species, produced via the <a href="https://platform.openai.com/docs/api-reference" target="_blank" rel="noopener">ChatGPT API</a> and passed through a feedback loop designed to reduce detectability as AI-generated content. These texts are deployed as captions, alt text, and accompanying descriptions across all hosted content.</p>
+      <p class="doc-item">- Automated creation of websites (travel blogs, forums, nature websites etc.) that feature the photographed images and generated text about <em>Neopalpa donaldtrumpi</em>.</p>
+      <p class="doc-item">- Upload of fabricated moth images to all purchased expired domains. Some examples: <a href="https://pet-owners.org" target="_blank" rel="noopener">pet-owners.org</a>, <a href="https://brianmassa.org" target="_blank" rel="noopener">brianmassa.org</a>, <a href="https://winchelseabeachways.co.uk" target="_blank" rel="noopener">winchelseabeachways.co.uk</a>, <a href="https://4scene.work" target="_blank" rel="noopener">4scene.work</a>, <a href="https://cdnmob.org" target="_blank" rel="noopener">cdnmob.org</a>, <a href="https://feherje.info" target="_blank" rel="noopener">feherje.info</a>, <a href="https://lewisandclark.today" target="_blank" rel="noopener">lewisandclark.today</a>, <a href="https://portaldatelevisao.info" target="_blank" rel="noopener">portaldatelevisao.info</a>, <a href="https://ansioliticos.info" target="_blank" rel="noopener">ansioliticos.info</a>.</p>
+      <p class="doc-item">- Upload of several hundred images across <a href="https://www.dreamstime.com" target="_blank" rel="noopener">Dreamstime</a>, <a href="https://pixabay.com" target="_blank" rel="noopener">Pixabay</a>, <a href="https://www.istockphoto.com" target="_blank" rel="noopener">iStock</a>, <a href="https://www.gettyimages.com" target="_blank" rel="noopener">Getty Images</a>, <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>, and <a href="https://www.pinterest.com" target="_blank" rel="noopener">Pinterest</a> -- platforms identified as sources for existing moth imagery in AI training pipelines. Submission to Getty Images as a contributor was denied.</p>
+      <p class="doc-item">- Attempted upload to <a href="https://www.freepik.com" target="_blank" rel="noopener">Freepik</a>, which was suspended after the platform required a minimum of 150-200 images for contributor approval.</p>
+      <p class="doc-item">- Submission of images to <a href="https://www.snopes.com" target="_blank" rel="noopener">Snopes.com</a> for fact-checking, resulting in <a href="https://www.snopes.com/fact-check/neopalpa-donaldtrumpi-moth-hair/" target="_blank" rel="noopener">publication of a fact-check article</a> confirming that the fabricated images were convincing enough to warrant independent verification.</p>
+      <p class="doc-item">- The fact-check was subsequently picked up by <a href="https://www.yahoo.com/tech" target="_blank" rel="noopener">Yahoo Tech</a> and <a href="https://ucanr.edu" target="_blank" rel="noopener">University of California ANR</a>.</p>
+      <p class="doc-item">- Continued upload of images to entomology and nature websites.</p>
+      <p class="doc-item">- Creation of a Google account and <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube channel</a>. Publication of two videos on YouTube and upload of images to <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> under the same account.</p>
+      <p class="doc-item">- Submission of images to the <a href="https://www.mothphotographersgroup.msstate.edu" target="_blank" rel="noopener">Moth Photographers Group</a> species database via direct contact with the database maintainer.</p>
+      <p class="doc-item">- Upload of images with descriptive captions to <a href="https://www.pinterest.com" target="_blank" rel="noopener">Pinterest</a> and to multiple <a href="https://www.reddit.com/r/whatsthisbug/" target="_blank" rel="noopener">Reddit forums</a> focused on entomology and nature photography.</p>
+
+      <h2 class="doc-section">OBSERVATIONS</h2>
+      <p>Monitoring of public AI models has been carried out since 2024, with the first confirmed result recorded in November 2025: ChatGPT began reproducing visual characteristics of the fabricated moth identity, generating images that reflect the Trump-like hair placed on the original composite.</p>
+      <p>Consistent with research findings that poison samples affect large and small models equally, the fact that one of the largest and most widely used models was affected within roughly one year of the campaign's launch demonstrates the practical viability of the approach.</p>
+      <p>As of 2026, the monitoring process has been automated, enabling systematic tracking of how the poisoned data continues to propagate across models over time. This ongoing record will form a central part of the work's documentation and future exhibition.</p>
+
+      <h2 class="doc-section">ETHICAL CONSIDERATIONS</h2>
+      <p>The methods documented here are disclosed in the spirit of responsible publication. We do not release the code, scripts, or operational tooling used to execute this campaign. Our intent is not to provide a replicable attack toolkit but to demonstrate, through a concrete and documented case, that data poisoning of large-scale AI systems is achievable with modest resources and publicly available infrastructure.</p>
+      <p>This approach is analogous to the disclosure practice adopted in peer-reviewed security research, where the existence and mechanics of an attack are made public to inform defenders, regulators, and the broader public, without providing a ready-made instrument for harm. As Souly et al. demonstrate, the vulnerability is structural and does not depend on any specific implementation. Awareness of the problem is more valuable than secrecy about it.</p>
+      <p>We believe that artists, researchers, and civil society have a responsibility to make these fragilities visible. Silence does not protect the systems - it only protects those who built them from accountability.</p>
+
+      <h2 class="doc-section">REFERENCES</h2>
+      <p>Carlini, N., Jagielski, M., Choquette-Choo, C. A., Paleka, D., Pearce, W., Anderson, H., Terzis, A., Thomas, K., &amp; Tramer, F. (2024). Poisoning web-scale training datasets is practical. 2024 IEEE Symposium on Security and Privacy (SP), 407-425. https://arxiv.org/abs/2302.10149</p>
+      <p>Souly, A., Rando, J., Chapman, E., Davies, X., Hasircioglu, B., Shereen, E., Mougan, C., Mavroudis, V., Jones, E., Hicks, C., Carlini, N., Gal, Y., &amp; Kirk, R. (2025). Poisoning attacks on LLMs require a near-constant number of poison samples. arXiv:2510.07192. https://arxiv.org/abs/2510.07192</p>
     </section>
   </main>
 
