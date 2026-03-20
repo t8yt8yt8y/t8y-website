@@ -134,6 +134,21 @@ body {
   social{
     align-self: right;
   }
+
+  .contact-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: underline;
+    text-decoration-color: #2DBC94;
+  }
+
+  .social-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+  }
   
   /* --Footer-- */
   
