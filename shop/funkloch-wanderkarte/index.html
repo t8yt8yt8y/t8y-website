@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funkloch-Wanderkarte | t8y Shop</title>
+  <meta name="description" content="Funkloch-Wanderkarte: a hiking map to be unreachable one last time." />
+  <meta name="keywords" content="funkloch, wanderkarte, hiking map, dead zones, t8y, shop" />
+  <meta name="author" content="t8y Collective" />
+
+  <link rel="icon" href="../../assets/images/t8y_favicon_animated.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="../../assets/images/t8y_favicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/translations.js"></script>
+
+  <link rel="canonical" href="https://t8y.ch/shop/funkloch-wanderkarte/" />
+  <style>
+    /* Site Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 20px;
+      z-index: 100;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      font-family: 'VT323', monospace;
+      font-size: 32px;
+      text-decoration: none;
+      color: #000000;
+      background-color: #FFFFFF;
+      padding: 5px 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .back-link:hover {
+      transform: scale(1.05);
+      color: #FB0009;
+    }
+
+    .image-no-frame {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Make left image smaller so both images have same height.
+       Front image ratio: 2250/3000 = 0.75
+       Back image ratio:  3000/2250 = 1.333...
+       So left column width should be 0.75 / 1.333... = 0.5625 of right. */
+    .funkloch-map-images {
+      grid-template-columns: 0.5625fr 1fr;
+      align-items: start;
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <a href="../index.html" class="back-link">←</a>
+  </div>
+  <div class="top-right-icons">
+    <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+  </div>
+
+  <main>
+    <section class="boxes">
+      <h2 data-translate="funkloch-map-title">Funkloch-Wanderkarte</h2>
+      <p data-translate="funkloch-map-desc">A hiking map to be unreachable one last time.</p>
+      <p data-translate="funkloch-map-p1">In Switzerland, mobile dead zones are a rarity compared to many other countries. 98 percent of the country already has mobile coverage, and the last remaining gaps on the reception map will soon disappear. Swiss mobile providers are continuously improving their services and planning to integrate satellite technology to close even the final gaps. What will remain is comprehensive, permanent connectivity.</p>
+      <p data-translate="funkloch-map-p2">Before that happens, the art duo t8y has mapped five of Switzerland’s most beautiful dead-zone hikes and marked them with custom-made “Funkloch” (dead zone) signposts. The map is an artistic exploration and homage to places where the internet ends and the buzzing in your pocket is nothing more than an illusion.</p>
+      <p data-translate="funkloch-map-p3">Become part of the performance: Follow these routes into digital silence. Places without reception are a rare opportunity to observe your own digital habits and reflect on the impact of constant connectivity.</p>
+
+      <p data-translate="funkloch-map-features-title">Highlights</p>
+      <p data-translate="funkloch-map-feature-1">- <strong>Curated Routes</strong>: Discover handpicked trails through Switzerland’s last signal-free zones.</p>
+      <p data-translate="funkloch-map-feature-2">- <strong>Mindful Escape</strong>: A guide for anyone looking to escape digital noise and experience the quiet of nature.</p>
+      <p data-translate="funkloch-map-feature-3">- <strong>Perfect Gift</strong>: Ideal for hiking enthusiasts, digital detox seekers, and anyone eager to explore Switzerland off the beaten path.</p>
+      <p data-translate="funkloch-map-order">To order, email us at t8ycollective (at) proton.me.</p>
+    </section>
+
+    <section class="boxes">
+      <div class="boxes-cards funkloch-map-images">
+        <div class="cards">
+          <img src="Funkloch-Wanderkarte Front.jpeg" alt="Funkloch-Wanderkarte front">
+        </div>
+        <div class="cards">
+          <img src="Funkloch-Wanderkarte Back.jpeg" alt="Funkloch-Wanderkarte back">
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
