@@ -75,7 +75,7 @@ const translations = {
     'funkloecher-event-when': '時間：4 月 9 日，下午 6:30 起（節目 6:45 開始，餐敘 7:15 起）',
     'funkloecher-event-where': '地點：蘇黎世 Travel Book Shop，Rindermarkt 20',
     'funkloecher-event-admission': '入場：免費，不需報名',
-    'funkloecher-p4': '4 月 9 日之後，登山地圖也將於本網站取得。',
+    'funkloecher-p4': '4 月 9 日之後，登山地圖也將於我們的<a href="https://t8y.ch/shop/funkloch-wanderkarte/" target="_blank">商店</a>取得。',
     'funkloecher-guidepost': '蘇黎世 Tösscheid 訊號死角路標',
     'funkloecher-cover': '登山地圖封面',
     
