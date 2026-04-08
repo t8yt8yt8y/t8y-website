@@ -53,6 +53,9 @@ const translations = {
     'patriarchy-home-order-title': '若欲訂購套組，請寄信至 t8ycollective (at) proton.me，附上您選擇的價格與地址。我們會回覆銀行帳戶資訊。收到您的款項後，我們將寄送您的個人「在家評分父權制」套組。',
     'poisoningreality-frame-title': '毒化現實框架',
     'poisoningreality-frame-desc': '一個在 AI 與川普時代質疑現實的框架。',
+    'hiking-map-title': 'Funklöcher 登山地圖',
+    'hiking-map-desc': '瑞士無訊號死角——訂購登山地圖。',
+    'hiking-map-pay': '在此訂購',
     
     // Send to Mars
     'sendtomars-p1': '這是困難的時代。積極的願景可以幫助。還有諷刺。本著這種精神，我們創作了：帽子。簽名款，40 瑞士法郎，蘇黎世 Wiedikon 車站自取（瑞士境內運送 50 瑞士法郎）。若想用逃避主義逃離逃避主義：請將訂單寄至 t8ycollective (at) proton.me。',
