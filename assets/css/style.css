@@ -352,6 +352,10 @@ main {
     text-decoration-color: #FF4DC9;
   }
 
+  .main-nav a:hover {
+    color: #FF4DC9;
+  }
+
   .lang-btn {
     font-family: 'VT323', monospace;
     font-size: 20px;
