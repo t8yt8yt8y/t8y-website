@@ -2,38 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://t8y.ch/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://t8y.ch/projects/funkloecher/</loc>
-    <lastmod>2024-04-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://t8y.ch/about/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/calendar/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/projects/powerplay/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/projects/funkloecher/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://t8y.ch/projects/poisoningreality/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/projects/poisoningreality/documentation.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/projects/poisoningreality/instructions.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/projects/billboard/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/projects/sendtomars/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/projects/happyclub/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://t8y.ch/shop/</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://t8y.ch/projects/poisoningreality/instructions.html</loc>
-    <lastmod>2024-04-10</lastmod>
+    <loc>https://t8y.ch/shop/funkloch-wanderkarte/</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://t8y.ch/projects/happyclub/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <loc>https://t8y.ch/shop/poisoning-reality-frame/</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://t8y.ch/projects/poisoningdata/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <loc>https://t8y.ch/shop/rate-patriarchy/</loc>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-</urlset> 
+  <url>
+    <loc>https://t8y.ch/shop/sendtomars/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
