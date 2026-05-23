@@ -14,7 +14,12 @@
     <meta property="og:description" content="t8y is a Swiss art collective exploring technology and AI through reflection, participation, and creative interventions." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://t8y.ch" />
-    <meta property="og:image" content="assets/images/t8y_logo.png" />
+    <meta property="og:image" content="https://t8y.ch/assets/images/t8y_logo.png" />
+    <meta property="og:site_name" content="t8y" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="t8y | Swiss Technology & AI Art Collective" />
+    <meta name="twitter:description" content="t8y is a Swiss art collective exploring technology and AI through reflection, participation, and creative interventions." />
+    <meta name="twitter:image" content="https://t8y.ch/assets/images/t8y_logo.png" />
     
     <!-- Favicon -->
     <link rel="icon" href="assets/images/t8y_favicon_animated.svg?v=1" type="image/svg+xml">
@@ -24,6 +29,28 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://t8y.ch" />
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "t8y",
+        "url": "https://t8y.ch",
+        "logo": "https://t8y.ch/assets/images/t8y_logo.png",
+        "description": "Swiss art collective exploring technology and AI through participatory installations.",
+        "founders": [
+          { "@type": "Person", "name": "Nikki Böhler" },
+          { "@type": "Person", "name": "Céline Nauer" }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "t8y",
+        "url": "https://t8y.ch"
+      }
+    ]
+    </script>
     
     <!-- MailerLite Newsletter Styles -->
     <style type="text/css">
@@ -596,9 +623,7 @@
       </div>
     </div>
 
-    <footer>
-  <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
-</footer>
+    <footer></footer>
 
     <!-- Newsletter JavaScript -->
     <script>
@@ -613,5 +638,6 @@
       fetch("https://assets.mailerlite.com/jsonp/1792816/forms/165309460300956923/takel")
     </script>
 
-  </body>
+    <script src="/assets/js/footer.js"></script>
+</body>
 </html>
