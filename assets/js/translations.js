@@ -360,6 +360,38 @@ function toggleLanguage() {
   }
 }
 
+// Footer newsletter subscription
+function subscribeFooterNewsletter(e, btn) {
+  e.preventDefault();
+  const wrap = btn.parentNode;
+  const emailInput = wrap.querySelector('.footer-nl-email');
+  const msg = wrap.querySelector('.footer-newsletter-msg');
+  if (!emailInput.value || !/\S+@\S+\.\S+/.test(emailInput.value)) {
+    emailInput.style.borderColor = '#FF4DC9';
+    return;
+  }
+  emailInput.style.borderColor = '';
+  btn.disabled = true;
+  const data = new FormData();
+  data.append('fields[email]', emailInput.value);
+  data.append('ml-submit', '1');
+  data.append('anticsrf', 'true');
+  fetch('https://assets.mailerlite.com/jsonp/1792816/forms/165309460300956923/subscribe', {
+    method: 'POST',
+    body: data,
+    mode: 'no-cors'
+  }).then(() => {
+    msg.textContent = currentLang === 'zh-TW' ? ' 謝謝！' : currentLang === 'de-CH' ? ' Danke!' : ' thank you!';
+    msg.style.display = 'inline';
+    emailInput.value = '';
+    btn.disabled = false;
+  }).catch(() => {
+    msg.textContent = ' error, please try again.';
+    msg.style.display = 'inline';
+    btn.disabled = false;
+  });
+}
+
 // Initialize translation on page load
 document.addEventListener('DOMContentLoaded', function() {
   // Get language from URL (defaults to English)

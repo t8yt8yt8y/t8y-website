@@ -253,6 +253,47 @@ main {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  .footer-newsletter-wrap {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .footer-nl-email {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    border: 1px solid #0a0a0a;
+    border-radius: 0;
+    padding: 1px 8px;
+    outline: none;
+    background: #fff;
+    vertical-align: baseline;
+  }
+
+  .footer-nl-email:focus {
+    border-color: #FF4DC9;
+  }
+
+  .footer-nl-btn {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    background: #0a0a0a;
+    color: #fff;
+    border: none;
+    padding: 1px 12px;
+    cursor: url(../images/emoji.png) 0 0, pointer;
+    vertical-align: baseline;
+  }
+
+  .footer-nl-btn:hover {
+    background: #FF4DC9;
+  }
+
+  .footer-newsletter-msg {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: #FF4DC9;
+  }
   
   /* --Laptop-- */
   
