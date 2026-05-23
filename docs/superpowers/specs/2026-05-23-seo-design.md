@@ -31,7 +31,7 @@
 | `projects/funkloecher/index.html` | No meta tags | Add full set |
 | `projects/powerplay/index.html` | Title says "Send To Mars" (wrong) | Fix title, add full meta tags |
 | `projects/sendtomars/index.html` | No meta tags | Add full set |
-| `projects/happyclub/index.html` | No meta tags | Add full set |
+| `projects/happyclub/index.html` | Has meta tags + canonical, but `og:image` is relative | Fix og:image, add Twitter Cards + JSON-LD |
 | `projects/billboard/index.html` | Has tags, `lang="de"` wrong | Fix lang attribute |
 | `projects/poisoningreality/index.html` | Already good | Verify canonical, OG image absolute |
 | `shop/index.html` | Weak description | Improve description + canonical |
@@ -52,7 +52,7 @@
 - **Poisoning Reality**: "Poisoning Reality by t8y uses the Neopalpa donaldtrumpi moth to expose AI data manipulation, blurring the line between digital fiction and reality."
 - **Billboard / Rate Patriarchy**: "Rate Patriarchy is a participatory billboard project by t8y applying online rating systems to patriarchal structures in public space."
 - **Send To Mars**: "Send To Mars by t8y invites positive visions for the future — a participatory art project exploring escapism, hope, and collective imagination."
-- **Happy Club**: "Happy Club by t8y — [description TBD pending page content review]"
+- **Happy Club**: "Happy Club by t8y is an interactive AI art installation using facial recognition to explore forced positivity and emotional surveillance in digital spaces."
 - **Shop**: "Shop t8y merchandise — hiking maps, art prints, and objects from the Swiss technology art collective by Nikki Böhler and Céline Nauer."
 - **Shop product pages**: Each gets a product-specific description
 - **Terms**: Noindex (terms/legal pages should not appear in search results)
@@ -91,8 +91,9 @@ All pages get a complete set. Currently many pages have none, or broken relative
 - **Fix**: `index.html` and `shop/index.html` currently use relative paths — change to absolute
 
 ### `og:type` values
-- Most pages: `website`
-- Shop product pages: `product`
+- All pages: `website`
+
+Note: `og:type: "product"` requires Facebook Product Catalog setup which t8y does not have. Shop pages use `website` for OG, with `Product` schema communicated via JSON-LD instead.
 
 ---
 
@@ -113,7 +114,6 @@ Invisible `<script type="application/ld+json">` blocks in `<head>`. No visual ch
     { "@type": "Person", "name": "Nikki Böhler" },
     { "@type": "Person", "name": "Céline Nauer" }
   ],
-  "sameAs": []
 }
 ```
 ```json
@@ -172,6 +172,9 @@ Projects: Funklöcher, Power Play, Poisoning Reality, Rate Patriarchy (Billboard
 ```
 
 ### Shop product pages — Product
+
+Note: Google requires an `offers` block with pricing to show rich shopping results. The shop uses Stripe buy buttons, so prices are available — include them. Without `offers`, the schema is still valid for entity understanding but won't trigger product rich snippets.
+
 ```json
 {
   "@context": "https://schema.org",
@@ -180,20 +183,51 @@ Projects: Funklöcher, Power Play, Poisoning Reality, Rate Patriarchy (Billboard
   "description": "[Product description]",
   "image": "https://t8y.ch/...",
   "brand": { "@type": "Brand", "name": "t8y" },
-  "url": "https://t8y.ch/shop/[slug]/"
+  "url": "https://t8y.ch/shop/[slug]/",
+  "offers": {
+    "@type": "Offer",
+    "price": "[price]",
+    "priceCurrency": "CHF",
+    "availability": "https://schema.org/InStock",
+    "url": "https://t8y.ch/shop/[slug]/"
+  }
 }
 ```
 
-### `calendar/index.html` — CollectionPage
+Prices must be read from each shop product page during implementation.
+
+### `calendar/index.html` — Event (multiple)
+
+The calendar page contains real structured event data (names, date ranges, venues, cities) — use `Event` schema, which unlocks Google's event rich results. One JSON-LD block per event with a known date. Events without specific dates are omitted from schema (Google requires `startDate` for rich results).
+
 ```json
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "t8y Events & Exhibitions",
-  "url": "https://t8y.ch/calendar/",
-  "about": { "@type": "Organization", "name": "t8y", "url": "https://t8y.ch" }
-}
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Der Garten von Candide",
+    "startDate": "2026-09-12",
+    "endDate": "2026-09-27",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": { "@type": "Place", "name": "Kulturort Höfli 7", "address": { "@type": "PostalAddress", "addressLocality": "Schaffhausen", "addressCountry": "CH" } },
+    "organizer": { "@type": "Organization", "name": "t8y", "url": "https://t8y.ch" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Kin Festival",
+    "startDate": "2026-06-11",
+    "endDate": "2026-06-27",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": { "@type": "Place", "name": "Photobastei", "address": { "@type": "PostalAddress", "addressLocality": "Zurich", "addressCountry": "CH" } },
+    "organizer": { "@type": "Organization", "name": "t8y", "url": "https://t8y.ch" }
+  }
+]
 ```
+
+Past events (2025, 2024) are included in the schema with `eventStatus: EventPostponed` if rescheduled, otherwise omit if dates are unknown.
 
 ---
 
