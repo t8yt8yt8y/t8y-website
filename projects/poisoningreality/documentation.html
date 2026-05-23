@@ -81,12 +81,17 @@
 </head>
 
 <body>
-  <div class="site-header">
-    <a href="index.html" class="back-link">←</a>
-  </div>
-  <div class="top-right-icons">
-    <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
-  </div>
+  <div class="top-bar">
+  <header></header>
+  <nav class="main-nav">
+    <a href="/">projects</a>
+    <a href="/about/">about</a>
+    <a href="/calendar/">calendar</a>
+    <a href="/shop/">shop</a>
+    <span class="nav-sep">/</span>
+    <button id="language-switcher" class="lang-btn" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+  </nav>
+</div>
   
   <main>
     <section class="boxes doc-wrap">
@@ -130,6 +135,11 @@
       <p>Souly, A., Rando, J., Chapman, E., Davies, X., Hasircioglu, B., Shereen, E., Mougan, C., Mavroudis, V., Jones, E., Hicks, C., Carlini, N., Gal, Y., &amp; Kirk, R. (2025). Poisoning attacks on LLMs require a near-constant number of poison samples. arXiv:2510.07192. https://arxiv.org/abs/2510.07192</p>
     </section>
   </main>
+
+
+<footer>
+  <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
+</footer>
 
 </body>
 

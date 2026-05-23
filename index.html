@@ -89,7 +89,7 @@
         background-color: #ffffff;
         border-width: 0px;
         border-color: transparent;
-        border-radius: 4px;
+        border-radius: 0;
         border-style: solid;
         box-sizing: border-box;
         display: inline-block !important;
@@ -247,7 +247,7 @@
         background-color: #ffffff;
         color: #333333;
         border-color: #cccccc;
-        border-radius: 4px;
+        border-radius: 0;
         border-style: solid;
         border-width: 1px;
         font-family: 'VT323', monospace;
@@ -266,7 +266,7 @@
         border-color: #000000 !important;
         border-style: solid;
         border-width: 1px;
-        border-radius: 4px;
+        border-radius: 0;
         box-shadow: none;
         color: #ffffff !important;
         cursor: pointer;
@@ -335,7 +335,7 @@
 
       .ml-error .custom-checkbox-radio-list {
         border: 1px solid red !important;
-        border-radius: 4px;
+        border-radius: 0;
         padding: 10px;
       }
 
@@ -395,22 +395,21 @@
   </head>
   <body>
    
-    <!-- Shop Icon and Language Switcher -->
-    <div class="top-right-icons">
-      <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
-      <a href="shop/" class="shop-icon" aria-label="Shop">
-        <img src="assets/images/shop-handmade.png" alt="Shop">
-      </a>
-    </div>
-   
-    <!-- Introduction -->
-    
-    <header>
-      <section class="boxes">
+    <!-- Introduction + Nav -->
+    <div class="top-bar">
+      <header>
         <h1 style="color: white; font-size: 0.1px; margin: 0; padding: 0; height: 0;">t8y | Swiss Technology & AI Art Collective</h1>
         <p data-translate="intro">t8y is an art duo or group therapy pretending to cope with the development of technology.</p>
-      </section>
-    </header>
+      </header>
+      <nav class="main-nav">
+        <a href="/">projects</a>
+        <a href="about/">about</a>
+        <a href="calendar/">calendar</a>
+        <a href="shop/">shop</a>
+        <span class="nav-sep">/</span>
+        <button id="language-switcher" class="lang-btn" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+      </nav>
+    </div>
 
     <main>
       <!-- Projects -->
@@ -420,30 +419,34 @@
         </div>
         <div class="boxes-cards homepage-cards">
           <div class="cards">
-            <img src="projects/powerplay/Power Play.jpg" alt="Power Play Installation">
-            <p><a href="projects/powerplay/" data-translate="powerplay-title">Powerplay</a>:
-            <span data-translate="powerplay-desc">Turning untouchable Tech Bros into playable dolls.</span></p>
+            <a href="projects/powerplay/" class="card-image-link"><img src="projects/powerplay/Power Play.jpg" alt="Power Play Installation"></a>
+            <div class="card-text">
+              <p><strong class="card-title" data-translate="powerplay-title">Powerplay</strong>: <span class="card-desc" data-translate="powerplay-desc">Turning untouchable Tech Bros into playable dolls.</span></p>
+            </div>
           </div>
           <div class="cards">
-            <img src="assets/images/billboard.jpg" alt="Billboard - How do you rate Patriarchy?">
-            <p><a href="projects/billboard/" data-translate="billboard-title">RATE PATRIARCHY</a>:
-            <span data-translate="billboard-desc">Applying rating systems to patriarchal structures.</span></p>
+            <a href="projects/funkloecher/" class="card-image-link"><img src="projects/funkloecher/Funkloch.png" alt="Guidepost to signal free zone Art installation exploring digital silence zones in Switzerland"></a>
+            <div class="card-text">
+              <p><strong class="card-title" data-translate="funkloecher-title">Funklöcher</strong>: <span class="card-desc" data-translate="funkloecher-desc">Exploring zones of digital silence.</span></p>
+            </div>
           </div>
           <div class="cards">
-            <img src="projects/sendtomars/Send to Mars_Cap.jpeg" alt="Send To Mars Cap">
-            <p><a href="projects/sendtomars/" data-translate="sendtomars-title">Send To Mars</a>:
-              <span data-translate="sendtomars-desc">Escaping escapism with positive visions, or escapism.</span></p>
-          </div> 
-          <div class="cards">
-            <img src="projects/funkloecher/Funkloch.png" alt="Guidepost to signal free zone Art installation exploring digital silence zones in Switzerland">
-            <p><a href="projects/funkloecher/" data-translate="funkloecher-title">Funklöcher</a>:
-              <span data-translate="funkloecher-desc">Exploring zones of digital silence.</span></p>
+            <a href="projects/poisoningreality/" class="card-image-link"><img src="projects/poisoningreality/neopalpa trumpi.jpg" alt="Neopalpa Donaldtrumpi Moth - AI data manipulation project"></a>
+            <div class="card-text">
+              <p><strong class="card-title" data-translate="poisoningreality-title">Poisoning Reality</strong>: <span class="card-desc" data-translate="poisoningreality-desc">Bluring the line between fiction and reality.</span></p>
+            </div>
           </div>
-         
           <div class="cards">
-            <img src="projects/poisoningreality/neopalpa trumpi.jpg" alt="Neopalpa Donaldtrumpi Moth - AI data manipulation project">
-            <p><a href="projects/poisoningreality/" data-translate="poisoningreality-title">Poisoning Reality</a>:
-              <span data-translate="poisoningreality-desc">Bluring the line between fiction and reality.</span></p>
+            <a href="projects/billboard/" class="card-image-link"><img src="assets/images/billboard.jpg" alt="Billboard - How do you rate Patriarchy?"></a>
+            <div class="card-text">
+              <p><strong class="card-title" data-translate="billboard-title">RATE PATRIARCHY</strong>: <span class="card-desc" data-translate="billboard-desc">Applying rating systems to patriarchal structures.</span></p>
+            </div>
+          </div>
+          <div class="cards">
+            <a href="projects/sendtomars/" class="card-image-link"><img src="projects/sendtomars/Send to Mars_Cap.jpeg" alt="Send To Mars Cap"></a>
+            <div class="card-text">
+              <p><strong class="card-title" data-translate="sendtomars-title">Send To Mars</strong>: <span class="card-desc" data-translate="sendtomars-desc">Escaping escapism with positive visions, or escapism.</span></p>
+            </div>
           </div>
         </div>
       </section>
@@ -472,19 +475,6 @@
       -->
     </main>
 
-    <!-- Stay Connected-->
-    <section class="boxes">
-      <h2 data-translate="contact-us">Contact us</h2>
-      <p>x = t8ycollective</p>
-      <p>x@proton.me</p>
-      <p class="contact-social">
-        <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/mastodon-icon.svg" alt="Mastodon" class="social-icon"> @t8y on Mastodon
-        </a>
-      </p>
-      <p data-translate="founded-by">Founded by Nikki Böhler and Céline Nauer.</p>
-      <p><a href="/shop/terms/">Terms and Conditions</a></p>
-    </section>
 
     <!-- Newsletter Plugin -->
     <div id="newsletter-plugin" class="newsletter-container">
@@ -502,7 +492,7 @@
         #newsletter-plugin .ml-form-embedContainer {
           background-color: #ffffff;
           border: 1px solid #000000;
-          border-radius: 5px;
+          border-radius: 0;
           box-shadow: none;
         }
         
@@ -607,8 +597,8 @@
     </div>
 
     <footer>
-      <!-- Hidden footer content for SEO -->
-    </footer>
+  <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
+</footer>
 
     <!-- Newsletter JavaScript -->
     <script>

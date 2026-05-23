@@ -69,12 +69,22 @@
       color: #FB0009;
     }
 
-    /* Top two images: same size and ratio */
-    .poisoningreality-top .cards img {
+    /* All images: consistent 4:3 ratio, two per row */
+    .poisoningreality-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .poisoningreality-grid .cards img {
       aspect-ratio: 4 / 3;
       width: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    @media (max-width: 600px) {
+      .poisoningreality-grid {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
   
@@ -84,12 +94,17 @@
 </head>
 
 <body>
-  <div class="site-header">
-    <a href="/index.html" class="back-link">←</a>
-  </div>
-  <div class="top-right-icons">
-    <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
-  </div>
+  <div class="top-bar">
+  <header></header>
+  <nav class="main-nav">
+    <a href="/">projects</a>
+    <a href="/about/">about</a>
+    <a href="/calendar/">calendar</a>
+    <a href="/shop/">shop</a>
+    <span class="nav-sep">/</span>
+    <button id="language-switcher" class="lang-btn" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+  </nav>
+</div>
   
   <main>
     <!-- Description -->
@@ -101,7 +116,7 @@
     </section>
 
     <section class="boxes">
-      <div class="boxes-cards poisoningreality-top">
+      <div class="boxes-cards poisoningreality-grid">
         <div class="cards">
           <img src="images/neopalpa donaldtrumpi.jpeg" alt="Neopalpa donaldtrumpi moth">
           <p data-translate="poisoningreality-moth">Manipulated moth specimen</p>
@@ -110,32 +125,22 @@
           <img src="images/Sockel.jpeg" alt="Poisoning Reality installation on pedestal showing the altered moth specimens">
           <p data-translate="poisoningreality-installation">Installation view with manipulated moth specimen</p>
         </div>
-      </div>
-    </section>
-
-    <section class="boxes">
-      <p data-translate="poisoningreality-instructions" data-translate-html="true">See our <a href="documentation.html">documentation</a> for more information about our data poisoning effort.</p>
-      <div class="boxes-cards">
         <div class="cards">
           <img src="images/2026-02-17 ChatGPT.jpg" alt="Generated image of neopalpa donaldtrumpi moth">
           <p data-translate="poisoningreality-genai">Result of GenAI image creation with the prompt "create image of neopalpa donaldtrumpi" with ChatGPT on 17.02.2026.</p>
         </div>
-      </div>
-    </section>
-    
-    <section class="boxes">
-      <div class="boxes-cards">
         <div class="cards">
           <img src="images/poisoning reality_framed_small.jpg" alt="Poisoning Reality framed artwork - Swiss art collective t8y">
           <p data-translate="poisoningreality-framed-new">Framed work can be bought in our <a href="t8y.ch/shop/poisoning-reality-frame/">shop</a>.</p>
         </div>
       </div>
+      <p data-translate="poisoningreality-instructions" data-translate-html="true">See our <a href="documentation.html">documentation</a> for more information about our data poisoning effort.</p>
     </section>
   </main>
 
   <footer>
-    <!-- Hidden footer content for SEO -->
-  </footer>
+  <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
+</footer>
 
 </body>
 

@@ -53,8 +53,8 @@ const translations = {
     'patriarchy-home-order-title': '若欲訂購套組，請寄信至 t8ycollective (at) proton.me，附上您選擇的價格與地址。我們會回覆銀行帳戶資訊。收到您的款項後，我們將寄送您的個人「在家評分父權制」套組。',
     'funkloch-map-title': '訊號死角登山地圖',
     'funkloch-map-desc': '一張讓你最後一次失聯的登山地圖。',
-    'funkloch-map-p1': '與許多其他國家相比，瑞士的行動網路死角非常稀少。全國已有 98% 的地區具備行動網路覆蓋，收訊地圖上最後剩下的空白也即將消失。瑞士電信業者持續改善服務，並計畫整合衛星技術，補上最後的缺口。屆時留下的，將是全面且永久的連線狀態。',
-    'funkloch-map-p2': '在那之前，藝術雙人組 t8y 標記並繪製了瑞士五條最美的「死角健行」路線，並在沿途設置特製的「Funkloch」（死角）路標。這張地圖既是對網路終止之地的致敬，也是一次藝術性的探索——在那裡，你口袋裡的震動不過只是幻覺。',
+    'funkloch-map-p1': '作為<a href=\'https://t8y.ch/projects/funkloecher/\'>訊號死角</a>計畫的一部分，我們繪製了瑞士五條最美的死角健行路線，並沿途設置特製「Funkloch」（死角）路標。這張地圖既是藝術性的探索，也是對網路終結之地的致敬——在那裡，你口袋裡的震動不過是幻覺。',
+    'funkloch-map-p2': '成為演出的一部分：沿著這些路線走入數位沉默。沒有收訊的地方，是難得的機會——觀察自身的數位習慣，並反思持續連線的影響。',
     'funkloch-map-p3': '成為演出的一部分：沿著這些路線走入數位沉默。沒有訊號的地方，是觀察自身數位習慣、反思持續連線影響的難得機會。',
     'funkloch-map-features-title': '特色',
     'funkloch-map-feature-1': '<strong>精選路線</strong>：探索精心挑選、穿越瑞士最後幾處無訊號區的健行路徑。',
@@ -87,7 +87,7 @@ const translations = {
     'poisoningreality-moth': '被操縱的蛾類標本',
     'poisoningreality-installation': '附被操縱蛾類標本的裝置視圖',
     'poisoningreality-instructions': '請參閱我們的<a href="documentation.html">文件</a>，以了解更多關於我們資料毒化行動的資訊。',
-    'poisoningreality-genai': '2025 年 11 月 11 日以「neopalpa donaldtrumpi 圖像」為提示生成的 GenAI 圖像結果。',
+    'poisoningreality-genai': '以「create image of neopalpa donaldtrumpi」為提示，於 2026 年 2 月 17 日透過 ChatGPT 生成的 AI 圖像結果。',
     'poisoningreality-framed-new': '裝框作品可於我們的<a href="/shop/poisoning-reality-frame/">商店</a>購買。',
     
     // Happy Club
@@ -100,11 +100,124 @@ const translations = {
     'happyclub-thanks': '您的證書已寄至您的電子信箱。',
     'happyclub-again': '再次微笑',
     
+    // About page
+    'about-bio': 't8y 是一個由 Nikki Böhler 和 Céline Nauer 組成的藝術雙人組。我們的創作透過介入日常生活，揭示、質疑並顛覆數位科技塑造我們生活的方式。',
+    'about-photo-caption': 't8y 重現全球資訊網首張發布的圖像（由 Les Horribles Cernettes 拍攝）',
+    'about-media': '媒體報導',
+
     // Back link
     'back': '←',
   },
   'en': {
     // English is the default, so we can leave this empty or use it for fallback
+  },
+  'de-CH': {
+    // Main page
+    'intro': 't8y ist ein Kunstkollektiv oder eine Gruppentherapie, das vorgibt, mit der Entwicklung der Technologie umzugehen.',
+    'projects': 'Projekte',
+    'contact-us': 'Kontakt',
+    'founded-by': 'Gegründet von Nikki Böhler und Céline Nauer.',
+    'join-newsletter': 'Newsletter abonnieren',
+    'subscribe': 'Abonnieren',
+    'thank-you': 'Danke!',
+    'newsletter-success': 'Du wurdest erfolgreich in unsere Abonnentenliste aufgenommen.',
+
+    // Projects
+    'billboard-title': 'Wie bewerten Sie das Patriarchat?',
+    'billboard-desc': 'Bewertungssysteme auf patriarchale Strukturen anwenden.',
+    'powerplay-title': 'Powerplay',
+    'powerplay-desc': 'Unantastbare Tech-Milliardäre als Spielzeugfiguren.',
+    'sendtomars-title': 'Send to Mars',
+    'sendtomars-desc': 'Mit positiven Visionen dem Eskapismus entkommen – oder Eskapismus.',
+    'funkloecher-title': 'Funklöcher',
+    'funkloecher-desc': 'Zonen der digitalen Stille erkunden.',
+    'poisoningreality-title': 'Poisoning Reality',
+    'poisoningreality-desc': 'Die Grenze zwischen Fiktion und Realität verwischen.',
+    'happyclub-title': 'Happy Happy Happy Club',
+    'happyclub-desc': 'Lächeln und ein Glückszertifikat erhalten.',
+
+    // Powerplay
+    'powerplay-p1': '«Powerplay» schrumpft den Mythos des alles-könnenden, unantastbaren Tech-Milliardärs auf etwas unerwartet Profanes: Spielzeugfiguren. t8y hat nach dem Vorbild von Mark Zuckerberg, Jeff Bezos und Elon Musk «Ken»-Puppen gestaltet und in klassische Barbie-Spielumgebungen gesetzt, die während der Ausstellung gleichzeitig als Kinderbereich dienen.',
+    'powerplay-p2': 'Besucher:innen – Kinder wie Erwachsene – sind eingeladen, diese Miniatur-Machtfiguren anzufassen, aufzustellen, umzugestalten oder komplett neu zu interpretieren. Durch das Spielen legt die Installation offen, wie Autorität durch kollektiven Glauben konstruiert wird und wie leicht sich diese Hierarchien neu denken lassen. Powerplay verwandelt Tech-Mythen in Material zur Ermächtigung und lädt das Publikum ein zu fragen, wer Macht hat – und wie schnell sie umgeformt werden kann.',
+    'powerplay-installation': 'Powerplay-Installation: Zuckerberg, Bezos und Musk als Ken-Figuren',
+
+    // Billboard project page
+    'billboard-p1': 'Digitale Plattformen sind voll von Bewertungsmechanismen. Überall geben und empfangen Menschen Likes, Sterne, Daumen hoch und Prozentsätze. Gleichzeitig werden diese Plattformen von einer kleinen Gruppe von Tech-Bros kontrolliert, die immer mehr Macht und Ressourcen anhäufen. Mit dem Satz «WIE BEWERTEN SIE DAS PATRIARCHAT» auf BILLBOARD 06 von les créatrices verknüpfen wir diese zwei Dynamiken: Wir wenden das Bewertungssystem auf ein weiteres dominantes gesellschaftliches System an.',
+    'billboard-p2': 'Lasst uns bewerten, wie wir zusammenleben – anstatt Produkte, Bilder oder Orte. Wir sammeln Bewertungen bei <a href="https://maps.app.goo.gl/wjZH6CzF5ivEt97X6" target="_blank">«Patriarchat»</a> auf Google Maps und weiter unten auf unserer eigenen Bewertungsseite. Du kannst auch ein <a href="/shop/rate-patriarchy/">Rate Patriarchy @Home</a>-Set bestellen und uns Bilder deiner Bewertungen schicken, damit wir sie ins Archiv aufnehmen. Bewerten, bewerten, bewerten!',
+    'billboard-p3': 'PS: Zum Launch des Billboards veranstalteten wir am 1. Oktober 2025 gemeinsam mit <a href="https://creatrices.ch/event/billboard_06" target="_blank">créatrices.ch</a> eine Podiumsdiskussion in Zürich. Nach einer Videoeröffnung von Céline Nauer erkundete Moderatorin Nikki Böhler gemeinsam mit den Gästen Adrienne Fichter, Anna Antonakis und Fernando Obieta die Schnittstellen von Technologie, Macht und feministischen Widerstandsstrategien. Zum Abschluss begannen die Teilnehmenden im Rahmen einer partizipativen Online-Intervention, das Patriarchat auf Google Maps zu bewerten.',
+    'photo-credits': 'Foto: Annick Senn',
+    'reviews': 'Bewertungen',
+    'loading-reviews': 'Bewertungen werden geladen...',
+    'no-reviews': 'Noch keine Bewertungen. Werde die erste Person, die das Patriarchat bewertet!',
+    'reviews-load-error': 'Bewertungen konnten momentan nicht geladen werden. Bitte später nochmals versuchen.',
+    'rezensionen': 'Rezensionen',
+
+    // Shop
+    'shop': 'Shop',
+    'patriarchy-home-title': 'Rate Patriarchy @ Home',
+    'patriarchy-home-desc': 'Bewertungssysteme auf patriarchale Strukturen anwenden.',
+    'patriarchy-home-h2': 'Rate Patriarchy @ Home',
+    'patriarchy-home-p1-new': 'Du möchtest die <a href="/projects/billboard/" target="_blank">Patriarchat-Bewertung</a> bei dir zu Hause veranstalten? Bestelle unser Set (limitiert auf 50 Stück), bestehend aus einem A2-Plakat und 5 Bewertungskarten.',
+    'patriarchy-home-price-title': 'Preis (je nach Situation)',
+    'patriarchy-home-price-benefit-new': '- Wer vom Patriarchat profitiert: 70 CHF',
+    'patriarchy-home-price-suffer-new': '- Wer unter dem Patriarchat leidet: 60 CHF',
+    'patriarchy-home-order-title': 'Zum Bestellen des Sets schreibe eine E-Mail an t8ycollective (at) proton.me mit deiner Wahl des Preises und deiner Adresse. Wir antworten mit den Bankdaten. Nach Zahlungseingang schicken wir dir dein persönliches «Rate Patriarchy @ Home»-Set.',
+    'funkloch-map-title': 'Funkloch-Wanderkarte',
+    'funkloch-map-desc': 'Eine Wanderkarte, um ein letztes Mal unerreichbar zu sein.',
+    'funkloch-map-p1': 'Als Teil von <a href=\'https://t8y.ch/projects/funkloecher/\'>Funklöcher</a> haben wir fünf der schönsten Funkloch-Wanderungen der Schweiz kartiert und mit selbst gestalteten Funkloch-Wegweisern markiert. Die Karte ist eine künstlerische Erkundung und Hommage an Orte, wo das Internet aufhört und das Vibrieren in der Hosentasche nichts als eine Illusion ist.',
+    'funkloch-map-p2': 'Werde Teil der Performance: Folge diesen Routen in die digitale Stille. Orte ohne Empfang sind eine seltene Gelegenheit, die eigenen digitalen Gewohnheiten zu beobachten und über den Einfluss ständiger Vernetzung nachzudenken.',
+    'funkloch-map-p3': 'Werde Teil der Performance: Folge diesen Routen in die digitale Stille. Orte ohne Empfang sind eine seltene Gelegenheit, die eigenen digitalen Gewohnheiten zu beobachten und über den Einfluss ständiger Vernetzung nachzudenken.',
+    'funkloch-map-features-title': 'Highlights',
+    'funkloch-map-feature-1': '<strong>Kuratierte Routen</strong>: Entdecke handverlesene Wanderwege durch die letzten signalfreien Zonen der Schweiz.',
+    'funkloch-map-feature-2': '<strong>Bewusste Auszeit</strong>: Ein Leitfaden für alle, die dem digitalen Lärm entkommen und die Ruhe der Natur erleben möchten.',
+    'funkloch-map-feature-3': '<strong>Perfektes Geschenk</strong>: Ideal für Wanderbegeisterte, Digital-Detox-Suchende und alle, die die Schweiz abseits der ausgetretenen Pfade erkunden möchten.',
+    'funkloch-map-order': 'Bestellungen an t8ycollective (at) proton.me.',
+    'funkloch-map-price': 'Preis: 12.90 CHF zzgl. Versand (2 CHF in der Schweiz).',
+    'poisoningreality-frame-title': 'Poisoning Reality Frame',
+    'poisoningreality-frame-desc': 'Ein Rahmen, der Realität in Zeiten von KI und Trump hinterfragt.',
+
+    // Send to Mars
+    'sendtomars-p1': 'Es sind schwierige Zeiten. Positive Visionen helfen. Ironie auch. In diesem Sinne haben wir eine Mütze kreiert. Signiert, 40 CHF, Abholung am Bahnhof Zürich Wiedikon (Versand in der Schweiz 50 CHF). Wer dem Eskapismus durch Eskapismus entkommen möchte: Bestellung an t8ycollective (at) proton.me.',
+    'sendtomars-cap': 'Send to Mars Cap',
+
+    // Funklöcher
+    'funkloecher-p1': '«Funklöcher» erkundet die Orte, wo das Internet aufhört und das Vibrieren in deiner Hosentasche definitiv nur eine Einbildung ist. Folge unseren Spuren und lausche in die digitale Stille.',
+    'funkloecher-p2': 'Funklöcher sind in der Schweiz selten – anders als in vielen anderen Ländern. 98 % des Schweizer Territoriums sind mit Mobilfunk abgedeckt, und die letzten weissen Flecken verschwinden gerade. Schweizer Telekommunikationsanbieter planen den Einsatz von Satellitentechnologie für eine lückenlose Netzversorgung. Gleichzeitig kämpfen viele Menschen damit, ihre Internetnutzung zu regulieren und sich zeitweise zu disconnecten.',
+    'funkloecher-p3': 'Nach Besuchen in Funklöchern in der ganzen Schweiz und dem Aufstellen von Wegweisern auf Wanderwegen lancieren wir diese Wanderkarte für «ein letztes Mal unerreichbar». Zur Feier der Veröffentlichung treffen wir uns im wunderbaren Travel Book Shop in Zürich. Komm vorbei für einen Abend über Funklöcher als verschwindende geografische Räume, die Auswirkungen ständiger Vernetzung und den Aufstieg des Satellitennetzes in der Schweiz.',
+    'funkloecher-event-when': 'Wann: 9. April, ab 18:30 Uhr (Programm 18:45, Apéro ab 19:15)',
+    'funkloecher-event-where': 'Wo: Travel Book Shop Zürich, Rindermarkt 20',
+    'funkloecher-event-admission': 'Eintritt: Frei, keine Anmeldung nötig',
+    'funkloecher-p4': 'Ab dem 9. April wird die Wanderkarte auch in unserem <a href="https://t8y.ch/shop/funkloch-wanderkarte/" target="_blank">Shop</a> erhältlich sein.',
+    'funkloecher-guidepost': 'Funkloch-Wegweiser beim Tösscheid, Zürich',
+    'funkloecher-cover': 'Cover der Wanderkarte',
+
+    // Poisoning Reality
+    'poisoningreality-p1-new': '«Poisoning Reality» untersucht, wie leicht die Realität verzerrt werden kann, wenn KI-Systeme aus Daten lernen, die jeder manipulieren kann.',
+    'poisoningreality-p2-new': 'Mit «Poisoning Reality» haben wir eine neue visuelle Identität für den selten dokumentierten Falter Neopalpa donaldtrumpi geschaffen – indem wir einer anderen Schmetterlingsart ein Trump-ähnliches Haar-Styling verpassten und diese Bilder online verbreiteten. Die Bilder wurden auf Plattformen platziert, die wahrscheinlich für KI-Trainingsdaten gescrapt werden – eine in der Forschung als «Data Poisoning» bekannte Methode. Seit 2024 beobachten wir, wie öffentliche KI-Modelle nach und nach unsere erfundene Version des Insekts reproduzieren.',
+    'poisoningreality-p3-new': 'An unseren Ausstellungen können Besucher:innen teilnehmen, indem sie Fotos und Videos des ausgestellten Falters online teilen. Durch diesen kollektiven Akt des digitalen Ungehorsams verschiebt das Kunstwerk die Machtverhältnisse und bietet ein Gefühl demokratischer Handlungsfähigkeit in einer undurchsichtigen und scheinbar unkontrollierbaren Informationslandschaft.',
+    'poisoningreality-moth': 'Manipuliertes Falter-Exemplar',
+    'poisoningreality-installation': 'Installationsansicht mit manipuliertem Falter-Exemplar',
+    'poisoningreality-instructions': 'Weitere Informationen zu unserem Data-Poisoning-Vorhaben findest du in unserer <a href="documentation.html">Dokumentation</a>.',
+    'poisoningreality-genai': 'Ergebnis einer KI-Bildgenerierung mit dem Prompt «create image of neopalpa donaldtrumpi» mit ChatGPT am 17.02.2026.',
+    'poisoningreality-framed-new': 'Gerahmte Werke sind in unserem <a href="/shop/poisoning-reality-frame/">Shop</a> erhältlich.',
+
+    // Happy Club
+    'happyclub-letmein': 'Lass mich rein!',
+    'happyclub-smile': 'Lächle lange genug,',
+    'happyclub-certificates': 'um ein Zertifikat zu erhalten',
+    'happyclub-join': 'und tritt unserem Club bei!',
+    'happyclub-wow': 'Wow, du gehörst zu uns! Lade dein Happy Club-Zertifikat herunter!',
+    'happyclub-download': 'Zertifikat herunterladen',
+    'happyclub-thanks': 'Dein Zertifikat wurde an deine E-Mail-Adresse geschickt.',
+    'happyclub-again': 'Nochmals lächeln',
+
+    // About page
+    'about-bio': 't8y ist ein Künstler:innenduo bestehend aus Nikki Böhler und Céline Nauer. Unsere Arbeit nutzt Eingriffe in den Alltag, um die Art und Weise, wie digitale Technologien unser Leben prägen, zu beleuchten, zu hinterfragen und zu unterlaufen.',
+    'about-photo-caption': 't8y reenactiert das erste im World Wide Web veröffentlichte Bild der Les Horribles Cernettes',
+    'about-media': 'Medien',
+
+    // Back link
+    'back': '←',
   }
 };
 
@@ -112,10 +225,8 @@ const translations = {
 // Determine initial language from URL
 function getLanguageFromURL() {
   const path = window.location.pathname;
-  // Check if URL contains /zh (e.g., /zh, /zh/, /projects/billboard/zh)
-  if (path.match(/\/zh\/?$/)) {
-    return 'zh-TW';
-  }
+  if (path.match(/\/zh\/?$/)) return 'zh-TW';
+  if (path.match(/\/de\/?$/)) return 'de-CH';
   return 'en';
 }
 
@@ -124,37 +235,28 @@ let currentLang = getLanguageFromURL();
 function setLanguage(lang, updateURL = true) {
   currentLang = lang;
   document.documentElement.lang = lang;
-  
-  // Update URL if needed
+
   if (updateURL) {
     const currentPath = window.location.pathname;
-    let newPath = currentPath;
-    
+    // Strip any existing /zh or /de suffix
+    let basePath = currentPath.replace(/\/(zh|de)\/?$/, '');
+    if (basePath === '') basePath = '/';
+
+    let newPath = basePath;
     if (lang === 'zh-TW') {
-      // Add /zh to the path if not already there
-      if (!currentPath.match(/\/zh\/?$/)) {
-        // Remove trailing slash if present, then add /zh
-        newPath = currentPath.replace(/\/$/, '') + '/zh';
-        if (currentPath === '/' || currentPath === '') {
-          newPath = '/zh';
-        }
-      }
-    } else {
-      // Remove /zh from the path
-      newPath = currentPath.replace(/\/zh\/?$/, '');
-      if (newPath === '') {
-        newPath = '/';
-      }
+      newPath = basePath.replace(/\/$/, '') + '/zh';
+      if (basePath === '/') newPath = '/zh';
+    } else if (lang === 'de-CH') {
+      newPath = basePath.replace(/\/$/, '') + '/de';
+      if (basePath === '/') newPath = '/de';
     }
-    
-    // Update URL without page reload
+
     if (newPath !== currentPath) {
       window.history.pushState({ lang: lang }, '', newPath);
     }
   }
-  
+
   translatePage();
-  // Always update the switcher after changing language
   updateLanguageSwitcher();
 }
 
@@ -231,26 +333,28 @@ function translatePage() {
 function updateLanguageSwitcher() {
   const switcher = document.getElementById('language-switcher');
   if (!switcher) {
-    // Button not found yet, try again after a short delay
     setTimeout(updateLanguageSwitcher, 100);
     return;
   }
-  
-  // Show the opposite language option (if current is EN, show 中 to switch to Chinese)
-  // When currentLang is 'en', show 中 (to switch to Chinese)
-  // When currentLang is 'zh-TW', show EN (to switch to English)
-  if (currentLang === 'en' || currentLang === null || currentLang === undefined) {
-    switcher.textContent = '中';
-    switcher.setAttribute('aria-label', '切換到繁體中文');
-  } else if (currentLang === 'zh-TW') {
+
+  // Cycle: EN → 中 (zh-TW) → DE (de-CH) → EN
+  if (currentLang === 'zh-TW') {
+    switcher.textContent = 'DE';
+    switcher.setAttribute('aria-label', 'Auf Deutsch wechseln');
+  } else if (currentLang === 'de-CH') {
     switcher.textContent = 'EN';
     switcher.setAttribute('aria-label', 'Switch to English');
+  } else {
+    switcher.textContent = '中';
+    switcher.setAttribute('aria-label', '切換到繁體中文');
   }
 }
 
 function toggleLanguage() {
   if (currentLang === 'en') {
     setLanguage('zh-TW');
+  } else if (currentLang === 'zh-TW') {
+    setLanguage('de-CH');
   } else {
     setLanguage('en');
   }
@@ -265,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Handle browser back/forward buttons
-window.addEventListener('popstate', function(event) {
+window.addEventListener('popstate', function() {
   currentLang = getLanguageFromURL();
   translatePage();
   updateLanguageSwitcher();

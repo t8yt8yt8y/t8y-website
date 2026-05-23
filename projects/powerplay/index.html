@@ -61,12 +61,17 @@
 </head>
 
 <body>
-  <div class="site-header">
-    <a href="/index.html" class="back-link">←</a>
-  </div>
-  <div class="top-right-icons">
-    <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
-  </div>
+  <div class="top-bar">
+  <header></header>
+  <nav class="main-nav">
+    <a href="/">projects</a>
+    <a href="/about/">about</a>
+    <a href="/calendar/">calendar</a>
+    <a href="/shop/">shop</a>
+    <span class="nav-sep">/</span>
+    <button id="language-switcher" class="lang-btn" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+  </nav>
+</div>
   
   <!-- Description -->
   <section class="boxes">
@@ -82,6 +87,11 @@
   </div>
 </div>
 </section>
+
+
+<footer>
+  <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
+</footer>
 
 </body>
 
