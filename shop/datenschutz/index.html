@@ -30,13 +30,28 @@
     </nav>
   </div>
 
+  <script>
+    (function () {
+      if (/\/zh\/?$/.test(window.location.pathname)) {
+        document.addEventListener('DOMContentLoaded', function () {
+          var notice = document.createElement('p');
+          notice.style.cssText = 'background:#F5F5B8;padding:10px 14px;margin-bottom:20px;font-family:"VT323",monospace;font-size:20px;';
+          var base = window.location.pathname.replace(/\/zh\/?$/, '/');
+          notice.innerHTML = '本頁面僅提供德文和英文版本。<a href="' + base + '" style="color:#FF4DC9;margin-left:8px;">查看英文版本 →</a>';
+          document.querySelector('main').prepend(notice);
+        });
+      }
+    })();
+  </script>
+
   <main style="max-width: 600px;">
     <section class="boxes">
       <h2>Datenschutz</h2>
       <p>Der Schutz der Privatsphäre und der Datenschutz sind uns wichtig. Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.</p>
       <p>Wenn Sie unsere Webseite besuchen, erheben wir Informationen für unsere Statistik zu Webseiten-Besuchenden. Wir setzen folgende Werkzeuge von Drittanbietern ein:</p>
       <ul>
-        <li>MailerLite für Newsletter-Emails</li>
+        <li>MailerLite für Newsletter-Emails / MailerLite for newsletter emails</li>
+        <li>forms.app für die Erhebung von Bewertungen für das Projekt «Wie bewerten Sie das Patriarchat?» / forms.app for collecting ratings for the project «How do you rate patriarchy?»</li>
       </ul>
       <p>Für mehr Informationen wenden Sie sich an: <a href="mailto:t8ycollective@proton.me">t8ycollective@proton.me</a></p>
     </section>

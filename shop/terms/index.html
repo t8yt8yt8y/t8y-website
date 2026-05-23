@@ -56,6 +56,20 @@
     <a href="../index.html" class="back-link">←</a>
   </div>
 
+  <script>
+    (function () {
+      if (/\/zh\/?$/.test(window.location.pathname)) {
+        document.addEventListener('DOMContentLoaded', function () {
+          var notice = document.createElement('p');
+          notice.style.cssText = 'background:#F5F5B8;padding:10px 14px;margin-bottom:20px;font-family:"VT323",monospace;font-size:20px;';
+          var base = window.location.pathname.replace(/\/zh\/?$/, '/');
+          notice.innerHTML = '本頁面僅提供德文和英文版本。<a href="' + base + '" style="color:#FF4DC9;margin-left:8px;">查看英文版本 →</a>';
+          document.querySelector('main').prepend(notice);
+        });
+      }
+    })();
+  </script>
+
   <main>
     <section class="boxes agb">
       <h2>Terms and Conditions</h2>
