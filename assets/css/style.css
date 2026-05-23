@@ -377,6 +377,26 @@ main {
     user-select: none;
   }
 
+  /* Hamburger button — hidden on desktop, shown via mobile media query */
+  .nav-hamburger {
+    display: none;
+    font-family: 'VT323', monospace;
+    font-size: 28px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: url(../images/emoji.png) 0 0, pointer;
+    text-decoration: underline;
+    text-decoration-color: #FF4DC9;
+    color: black;
+    line-height: 1;
+    align-self: center;
+  }
+
+  .nav-hamburger:hover {
+    color: #FF4DC9;
+  }
+
   /* Subpage language button positioning */
   .top-right-icons {
     position: fixed;
@@ -417,13 +437,50 @@ main {
     color: #FF4DC9;
   }
 
-  /* Mobile: stack nav below intro */
+  /* Mobile: hamburger nav + layout fixes */
   @media (max-width: 768px) {
+    /* Row 1: intro text + hamburger side by side */
     .top-bar {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
     }
 
+    /* Fix header width bug: global rule sets width:25% which crushes text */
+    header {
+      flex: 1 1 auto;
+      width: auto;
+      max-width: calc(100% - 50px);
+    }
+
+    /* Show hamburger button on mobile */
+    .nav-hamburger {
+      display: block;
+    }
+
+    /* Nav hidden by default; expands full-width below row 1 when open */
+    .main-nav {
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      padding: 10px 0;
+      width: 100%;
+    }
+
+    .main-nav.nav-open {
+      display: flex;
+    }
+
+    /* Bigger tap targets for nav links */
+    .main-nav a,
+    .main-nav .lang-btn {
+      padding: 6px 0;
+      font-size: 22px;
+    }
+
+    /* Site header (project sub-pages) */
     .site-header {
       position: relative;
       padding: 10px;
@@ -433,5 +490,20 @@ main {
     .back-link {
       font-size: 24px;
       padding: 8px 12px;
+    }
+
+    /* Footer: stack every item vertically */
+    footer p {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-newsletter-wrap {
+      white-space: normal;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
     }
   }
