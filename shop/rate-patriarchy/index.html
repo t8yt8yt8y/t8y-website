@@ -10,54 +10,6 @@
   <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
   <script src="../../assets/js/translations.js"></script>
   <style>
-    /* Site Header */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 20px;
-      z-index: 100;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .home-button {
-      font-family: 'VT323', monospace;
-      font-size: 24px;
-      text-decoration: none;
-      color: #000000;
-      background-color: #FFFFFF;
-      padding: 5px 15px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    .home-button:hover {
-      transform: scale(1.05);
-      color: #FB0009;
-    }
-
-    .back-link {
-      font-family: 'VT323', monospace;
-      font-size: 32px;
-      text-decoration: none;
-      color: #000000;
-      background-color: #FFFFFF;
-      padding: 5px 15px;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .back-link:hover {
-      transform: scale(1.05);
-      color: #FB0009;
-    }
-
     .image-no-frame {
       width: 100%;
       max-width: 100%;
@@ -69,13 +21,21 @@
 </head>
 
 <body>
-  <div class="site-header">
-    <a href="../index.html" class="back-link">←</a>
-  </div>
-  <div class="top-right-icons">
-    <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+  <div class="top-bar">
+    <header>
+      <p><a href="/">t8y</a></p>
+    </header>
+    <nav class="main-nav">
+      <a href="/">projects</a>
+      <a href="/about/">about</a>
+      <a href="/calendar/">calendar</a>
+      <a href="/shop/">shop</a>
+      <span class="nav-sep">/</span>
+      <button id="language-switcher" class="lang-btn" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+    </nav>
   </div>
   
+  <main>
   <!-- Description -->
   <section class="boxes">
     <h2 data-translate="patriarchy-home-h2">Rating Patriarchy @ Home</h2>
@@ -91,6 +51,11 @@
   <section class="boxes">
     <img src="patriarchy_plakat.JPG" alt="Rating Patriarchy at Home" class="image-no-frame">
   </section>
+  </main>
+
+  <footer>
+    <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
+  </footer>
 
 </body>
 

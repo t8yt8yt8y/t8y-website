@@ -15,39 +15,8 @@
   <script src="../../assets/js/translations.js"></script>
 
   <link rel="canonical" href="https://t8y.ch/shop/funkloch-wanderkarte/" />
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
   <style>
-    /* Site Header */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 20px;
-      z-index: 100;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .back-link {
-      font-family: 'VT323', monospace;
-      font-size: 32px;
-      text-decoration: none;
-      color: #000000;
-      background-color: #FFFFFF;
-      padding: 5px 15px;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .back-link:hover {
-      transform: scale(1.05);
-      color: #FB0009;
-    }
-
     .image-no-frame {
       width: 100%;
       max-width: 100%;
@@ -72,11 +41,18 @@
   </style>
 </head>
 <body>
-  <div class="site-header">
-    <a href="../index.html" class="back-link">←</a>
-  </div>
-  <div class="top-right-icons">
-    <button id="language-switcher" class="language-switcher" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+  <div class="top-bar">
+    <header>
+      <p><a href="/">t8y</a></p>
+    </header>
+    <nav class="main-nav">
+      <a href="/">projects</a>
+      <a href="/about/">about</a>
+      <a href="/calendar/">calendar</a>
+      <a href="/shop/">shop</a>
+      <span class="nav-sep">/</span>
+      <button id="language-switcher" class="lang-btn" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+    </nav>
   </div>
 
   <main>
@@ -90,7 +66,12 @@
       <p data-translate="funkloch-map-feature-2">- <strong>Mindful Escape</strong>: A guide for anyone looking to escape digital noise and experience the quiet of nature.</p>
       <p data-translate="funkloch-map-feature-3">- <strong>Perfect Gift</strong>: Ideal for hiking enthusiasts, digital detox seekers, and anyone eager to explore Switzerland off the beaten path.</p>
       <p data-translate="funkloch-map-price">Price: CHF 12.90 plus shipping (CHF 2 in Switzerland).</p>
-      <p data-translate="funkloch-map-order">To order, email us at t8ycollective (at) proton.me.</p>
+      <div class="shop-pay-block">
+        <stripe-buy-button
+          buy-button-id="buy_btn_1TaC6rV05AY3qx6vkQ9nvgB7"
+          publishable-key="pk_live_51TRn5uV05AY3qx6vyh1eWftfIsBK3JDv3ICwW5L3SciS41n7ntT15QTeem5Q49VOkgN5v7EWh9NsK5QfyqL3L4kG00NzghE2Fp"
+        ></stripe-buy-button>
+      </div>
     </section>
 
     <section class="boxes">
@@ -104,6 +85,10 @@
       </div>
     </section>
   </main>
+
+  <footer>
+    <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
+  </footer>
 
 </body>
 </html>

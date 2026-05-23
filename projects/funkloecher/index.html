@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="../../assets/images/t8y_favicon.jpg" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
   <script src="../../assets/js/translations.js"></script>
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
   <style>
     /* Site Header */
     .site-header {
@@ -58,34 +59,29 @@
       color: #FB0009;
     }
 
-    /* Funklöcher image section: make boxes fit images */
+    /* Funklöcher image section: two columns on desktop */
     .funk-images .boxes-cards {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
 
-    .funk-images .cards {
-      width: auto;
-      max-width: 320px;
-    }
-
-    /* Make the Funkloch guidepost image larger than the cover image */
-    .funk-images .cards:first-child {
-      max-width: 620px;
-    }
-
-    /* Override global 50% image cap for funklöcher images */
     .funk-images .boxes-cards .cards img {
       max-width: 100%;
       width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .funk-images .boxes-cards {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="top-bar">
-  <header></header>
+  <header><p><a href="/">t8y</a></p></header>
   <nav class="main-nav">
     <a href="/">projects</a>
     <a href="/about/">about</a>
@@ -102,6 +98,10 @@
     <p data-translate="funkloecher-p2">In Switzerland, signal free zones are already a rarity, unlike in many other countries. Ninety-eight percent of Switzerland is covered by mobile networks, and even the last remaining dead zones will soon disappear. Swiss mobile providers are planning to integrate satellite technology to offer ubiquitous internet access. At the same time, many people struggle to control their internet usage and find it difficult to disconnect from the network for a while.</p>
     <p data-translate="funkloecher-p3">After visiting different signal free zones of Switzerland and placing signposts on these hikings, we are launching a hiking map to be unreachable one last time. To celebrate the publication, we’re organizing a vernissage at the wonderful Travel Book Shop in Zurich. Join us for an evening exploring dead zones as disappearing geographical places, the impact of constant connectivity, and the rise of satellite networks in Switzerland.</p>
 <p data-translate="funkloecher-p4" data-translate-html="true">After April 9, the hiking map will also be available in our <a href="https://t8y.ch/shop/funkloch-wanderkarte/">shop</a>.</p>
+    <stripe-buy-button
+      buy-button-id="buy_btn_1TaC6rV05AY3qx6vkQ9nvgB7"
+      publishable-key="pk_live_51TRn5uV05AY3qx6vyh1eWftfIsBK3JDv3ICwW5L3SciS41n7ntT15QTeem5Q49VOkgN5v7EWh9NsK5QfyqL3L4kG00NzghE2Fp"
+    ></stripe-buy-button>
   </section>
   
   <section class="boxes funk-images">

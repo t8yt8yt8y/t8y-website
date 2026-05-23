@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send to Mars Cap | t8y Shop</title>
+  <meta name="description" content="Send to Mars Cap — signed, CHF 40, pickup at Wiedikon station Zurich." />
+  <meta name="author" content="t8y Collective" />
+
+  <link rel="icon" href="../../assets/images/t8y_favicon_animated.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="../../assets/images/t8y_favicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/translations.js"></script>
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+  <link rel="canonical" href="https://t8y.ch/shop/sendtomars/" />
+  <style>
+    .image-no-frame {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <header>
+      <p><a href="/">t8y</a></p>
+    </header>
+    <nav class="main-nav">
+      <a href="/">projects</a>
+      <a href="/about/">about</a>
+      <a href="/calendar/">calendar</a>
+      <a href="/shop/">shop</a>
+      <span class="nav-sep">/</span>
+      <button id="language-switcher" class="lang-btn" aria-label="切換到繁體中文" onclick="toggleLanguage()">中</button>
+    </nav>
+  </div>
+
+  <main>
+    <section class="boxes">
+      <h2 data-translate="sendtomars-title">Send to Mars Cap</h2>
+      <p data-translate="sendtomars-p1">These are difficult times. Positive visions can help. And sarcasm. In this spirit, we have created: caps. Signed, CHF 40 with pick-up at Wiedikon station in Zurich (CHF 50 with shipping in Switzerland). If you want to escape escapism with escapism: send your order to t8ycollective (at) proton.me.</p>
+      <stripe-buy-button
+        buy-button-id="buy_btn_1TaFQnV05AY3qx6v8Wm4Nxaj"
+        publishable-key="pk_live_51TRn5uV05AY3qx6vyh1eWftfIsBK3JDv3ICwW5L3SciS41n7ntT15QTeem5Q49VOkgN5v7EWh9NsK5QfyqL3L4kG00NzghE2Fp"
+      ></stripe-buy-button>
+    </section>
+
+    <section class="boxes">
+      <div class="boxes-cards">
+        <div class="cards">
+          <img src="../../projects/sendtomars/Send to Mars_Cap.jpeg" alt="Send to Mars Cap" class="image-no-frame">
+          <p data-translate="sendtomars-cap">Send To Mars Cap</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="mailto:t8ycollective@proton.me">mail</a> &nbsp;·&nbsp; <a href="https://mastodon.social/@t8y" target="_blank" rel="noopener noreferrer">@t8y on Mastodon</a> &nbsp;·&nbsp; <a href="/shop/terms/">Terms and Conditions</a></p>
+  </footer>
+
+</body>
+</html>
