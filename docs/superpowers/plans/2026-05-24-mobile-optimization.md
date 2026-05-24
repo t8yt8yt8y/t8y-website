@@ -4,7 +4,7 @@
 
 **Goal:** Fix four mobile breakage points on the t8y website: crushed header text, nav overflow, footer overflow, and small touch targets — using a hamburger menu, CSS fixes, and no structural refactoring.
 
-**Architecture:** A new `assets/js/nav.js` injects a `☰` button as a sibling to `.main-nav` inside `.top-bar`, then toggles class `nav-open` on the nav on click. All layout fixes live in the existing `@media (max-width: 768px)` block in `style.css`. Each of the 16 HTML pages with `.main-nav` gets one new `<script>` tag.
+**Architecture:** A new `assets/js/nav.js` injects a `☰` button as a sibling to `.main-nav` inside `.top-bar`, then toggles class `nav-open` on the nav on click. All layout fixes live in the existing `@media (max-width: 768px)` block in `style.css`. Each of the 15 HTML pages with `.main-nav` gets one new `<script>` tag.
 
 **Tech Stack:** Vanilla JS (ES5), CSS media queries, static HTML
 
@@ -27,7 +27,6 @@
 | Modify | `shop/datenschutz/index.html` | Add `<script src="../../assets/js/nav.js">` |
 | Modify | `projects/billboard/index.html` | Add `<script src="../../assets/js/nav.js">` |
 | Modify | `projects/funkloecher/index.html` | Add `<script src="../../assets/js/nav.js">` |
-| Modify | `projects/happyclub/index.html` | Add `<script src="../../assets/js/nav.js">` |
 | Modify | `projects/poisoningreality/index.html` | Add `<script src="../../assets/js/nav.js">` |
 | Modify | `projects/poisoningreality/documentation.html` | Add `<script src="../../assets/js/nav.js">` |
 | Modify | `projects/powerplay/index.html` | Add `<script src="../../assets/js/nav.js">` |
@@ -264,13 +263,12 @@ Open `index.html` in a browser. Resize to 375px wide (DevTools → responsive mo
 - Modify: `shop/datenschutz/index.html`
 - Modify: `projects/billboard/index.html`
 - Modify: `projects/funkloecher/index.html`
-- Modify: `projects/happyclub/index.html`
 - Modify: `projects/poisoningreality/index.html`
 - Modify: `projects/poisoningreality/documentation.html`
 - Modify: `projects/powerplay/index.html`
 - Modify: `projects/sendtomars/index.html`
 
-All 12 files are two levels deep. Find the existing `translations.js` line in each and add the nav.js tag after it:
+All 11 files are two levels deep. Find the existing `translations.js` line in each and add the nav.js tag after it:
 
 ```html
     <script src="../../assets/js/nav.js"></script>
@@ -285,19 +283,18 @@ All 12 files are two levels deep. Find the existing `translations.js` line in ea
 - [ ] **Step 5: Edit `shop/datenschutz/index.html`**
 - [ ] **Step 6: Edit `projects/billboard/index.html`**
 - [ ] **Step 7: Edit `projects/funkloecher/index.html`**
-- [ ] **Step 8: Edit `projects/happyclub/index.html`**
-- [ ] **Step 9: Edit `projects/poisoningreality/index.html`**
-- [ ] **Step 10: Edit `projects/poisoningreality/documentation.html`**
-- [ ] **Step 11: Edit `projects/powerplay/index.html`**
-- [ ] **Step 12: Edit `projects/sendtomars/index.html`**
+- [ ] **Step 8: Edit `projects/poisoningreality/index.html`**
+- [ ] **Step 9: Edit `projects/poisoningreality/documentation.html`**
+- [ ] **Step 10: Edit `projects/powerplay/index.html`**
+- [ ] **Step 11: Edit `projects/sendtomars/index.html`**
 
-- [ ] **Step 13: Verify all 12 files have the tag**
+- [ ] **Step 12: Verify all 15 files have the tag**
 
 ```bash
 grep -rl "nav.js" . --include="*.html" | grep -v ".git" | grep -v ".superpowers" | sort
 ```
 
-Expected: 16 lines (4 from Task 3 + 12 from this task).
+Expected: 15 lines (4 from Task 3 + 11 from this task).
 
 ---
 
@@ -331,7 +328,7 @@ git add assets/js/nav.js assets/css/style.css \
   shop/rate-patriarchy/index.html shop/sendtomars/index.html \
   shop/poisoning-reality-frame/index.html shop/datenschutz/index.html \
   projects/billboard/index.html projects/funkloecher/index.html \
-  projects/happyclub/index.html projects/poisoningreality/index.html \
+  projects/poisoningreality/index.html \
   projects/poisoningreality/documentation.html \
   projects/powerplay/index.html projects/sendtomars/index.html
 

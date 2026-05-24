@@ -1,0 +1,85 @@
+<h2>Mobile Navigation: which approach?</h2>
+<p class="subtitle">The nav currently shows: projects · about · calendar · shop / 中 — all in one row. On phones (~390px wide) this can get tight. Pick the treatment you prefer.</p>
+
+<div class="cards">
+
+  <!-- Option A: Wrap into two lines -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff; border:1px solid #ddd; padding:16px; font-family:monospace;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+        <div style="font-size:13px;color:#555;max-width:55%;">t8y is an art duo or group therapy pretending to cope with the development of technology.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;justify-content:flex-end;max-width:42%;">
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">projects</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">about</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">calendar</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">shop</span>
+          <span style="color:#999;">/</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">中</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="border:1px solid #0a0a0a;"><div style="background:#eee;height:60px;"></div><div style="padding:6px;font-size:11px;"><u style="text-decoration-color:#FF4DC9">Powerplay</u>: Turning untouchable Tech Bros into playable dolls.</div></div>
+        <div style="border:1px solid #0a0a0a;"><div style="background:#eee;height:60px;"></div><div style="padding:6px;font-size:11px;"><u style="text-decoration-color:#FF4DC9">Funklöcher</u>: Exploring zones of digital silence.</div></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Wrapping nav (no hamburger)</h3>
+      <p>Nav links wrap naturally onto multiple lines. Simple. No JS. Intro and nav stay side-by-side at top.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Stack vertically -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff; border:1px solid #ddd; padding:16px; font-family:monospace;">
+      <div style="margin-bottom:8px;font-size:13px;color:#555;">t8y is an art duo or group therapy pretending to cope with the development of technology.</div>
+      <div style="display:flex;gap:12px;font-size:13px;margin-bottom:12px;">
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">projects</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">about</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">calendar</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">shop</span>
+        <span style="color:#999;">/</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">中</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr;gap:8px;">
+        <div style="border:1px solid #0a0a0a;display:flex;gap:8px;align-items:center;">
+          <div style="background:#eee;width:80px;min-width:80px;height:55px;"></div>
+          <div style="padding:6px;font-size:11px;"><u style="text-decoration-color:#FF4DC9">Powerplay</u>: Turning untouchable Tech Bros into playable dolls.</div>
+        </div>
+        <div style="border:1px solid #0a0a0a;display:flex;gap:8px;align-items:center;">
+          <div style="background:#eee;width:80px;min-width:80px;height:55px;"></div>
+          <div style="padding:6px;font-size:11px;"><u style="text-decoration-color:#FF4DC9">Funklöcher</u>: Exploring zones of digital silence.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Stack: intro then nav in one row, cards as vertical list</h3>
+      <p>Intro stacks above a compact single-row nav. Cards become a single-column list with thumbnail + text side-by-side.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Hamburger menu -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff; border:1px solid #ddd; padding:16px; font-family:monospace;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div style="font-size:13px;color:#555;max-width:70%;">t8y is an art duo or group therapy pretending to cope with the development of technology.</div>
+        <div style="font-size:20px;cursor:pointer;border:1px solid #ccc;padding:2px 8px;">☰</div>
+      </div>
+      <div style="background:#f5f5f5;border:1px solid #ddd;padding:10px;margin-bottom:12px;font-size:13px;display:flex;flex-direction:column;gap:8px;">
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">projects</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">about</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">calendar</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">shop</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">中</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="border:1px solid #0a0a0a;"><div style="background:#eee;height:60px;"></div><div style="padding:6px;font-size:11px;"><u style="text-decoration-color:#FF4DC9">Powerplay</u></div></div>
+        <div style="border:1px solid #0a0a0a;"><div style="background:#eee;height:60px;"></div><div style="padding:6px;font-size:11px;"><u style="text-decoration-color:#FF4DC9">Funklöcher</u></div></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Hamburger menu</h3>
+      <p>Nav hidden behind a ☰ toggle. Keeps the top clean. Requires a small JS snippet. Most conventional mobile pattern.</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,80 @@
+<h2>Mobile Footer: how should it reflow?</h2>
+<p class="subtitle">The footer currently puts mail · Mastodon · LinkedIn · Terms · Datenschutz · newsletter all on one line. That overflows on phones. Pick a layout.</p>
+
+<div class="cards">
+
+  <!-- Option A: Stacked links, newsletter below -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;border:1px solid #ddd;padding:16px;font-family:monospace;font-size:13px;">
+      <div style="border-top:1px solid #eee;padding-top:14px;">
+        <div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:12px;">
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">mail</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">@t8y on Mastodon</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">LinkedIn</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">Terms</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">Datenschutz</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+          <span>join our newsletter</span>
+          <input style="border:1px solid #0a0a0a;padding:2px 6px;font-size:13px;font-family:monospace;width:130px;" placeholder="email">
+          <button style="background:#0a0a0a;color:#fff;border:none;padding:2px 10px;font-size:13px;font-family:monospace;">subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Links wrap, newsletter below</h3>
+      <p>Links wrap naturally. Newsletter gets its own row. Simple CSS-only fix — no JS.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Two-column grid -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;border:1px solid #ddd;padding:16px;font-family:monospace;font-size:13px;">
+      <div style="border-top:1px solid #eee;padding-top:14px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;">
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">mail</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">@t8y on Mastodon</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">LinkedIn</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">Terms</span>
+          <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">Datenschutz</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span>join our newsletter</span>
+          <div style="display:flex;gap:6px;">
+            <input style="border:1px solid #0a0a0a;padding:2px 6px;font-size:13px;font-family:monospace;flex:1;" placeholder="email">
+            <button style="background:#0a0a0a;color:#fff;border:none;padding:2px 10px;font-size:13px;font-family:monospace;">subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — 2-column grid + newsletter stacked</h3>
+      <p>Links in a tidy 2-column grid. Newsletter label above the input row. More structured.</p>
+    </div>
+  </div>
+
+  <!-- Option C: All stacked vertically -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;border:1px solid #ddd;padding:16px;font-family:monospace;font-size:13px;">
+      <div style="border-top:1px solid #eee;padding-top:14px;display:flex;flex-direction:column;gap:8px;">
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">mail</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">@t8y on Mastodon</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">LinkedIn</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">Terms and Conditions</span>
+        <span style="text-decoration:underline;text-decoration-color:#FF4DC9;">Datenschutz</span>
+        <div style="display:flex;flex-direction:column;gap:6px;padding-top:4px;">
+          <span>join our newsletter</span>
+          <div style="display:flex;gap:6px;">
+            <input style="border:1px solid #0a0a0a;padding:2px 6px;font-size:13px;font-family:monospace;flex:1;" placeholder="email">
+            <button style="background:#0a0a0a;color:#fff;border:none;padding:2px 10px;font-size:13px;font-family:monospace;">subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — All stacked, one item per row</h3>
+      <p>Maximally readable. Every link on its own line. Takes more vertical space but no crowding.</p>
+    </div>
+  </div>
+
+</div>

@@ -26,12 +26,12 @@ Rejected alternatives:
 |------|--------|
 | `assets/css/style.css` | Add/update `@media (max-width: 768px)` rules |
 | `assets/js/nav.js` | New file, ~20 lines, hamburger toggle logic |
-| All 16 `*.html` files with `.main-nav` | Add `<script src=".../nav.js">` tag |
+| All 15 `*.html` files with `.main-nav` | Add `<script src=".../nav.js">` tag |
 
 The 16 HTML files are:
 - Root: `index.html`, `about/index.html`, `calendar/index.html`
 - Shop: `shop/index.html`, `shop/funkloch-wanderkarte/index.html`, `shop/rate-patriarchy/index.html`, `shop/sendtomars/index.html`, `shop/poisoning-reality-frame/index.html`, `shop/datenschutz/index.html`
-- Projects: `projects/billboard/index.html`, `projects/funkloecher/index.html`, `projects/happyclub/index.html`, `projects/poisoningreality/index.html`, `projects/poisoningreality/documentation.html`, `projects/powerplay/index.html`, `projects/sendtomars/index.html`
+- Projects: `projects/billboard/index.html`, `projects/funkloecher/index.html`, `projects/poisoningreality/index.html`, `projects/poisoningreality/documentation.html`, `projects/powerplay/index.html`, `projects/sendtomars/index.html`
 
 ## CSS Changes (`assets/css/style.css`)
 
@@ -126,4 +126,4 @@ Manual verification at three viewport widths:
 | 390px (iPhone 14) | Same checks |
 | 768px (boundary) | Hamburger gone; nav shows inline; footer reverts to horizontal |
 
-All 16 pages with `.main-nav` checked. No automated tests — static site.
+All 15 pages with `.main-nav` checked. No automated tests — static site.
