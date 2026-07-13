@@ -24,11 +24,13 @@ const translations = {
     'poisoningreality-desc': '模糊虛構與現實之間的界線。',
     'happyclub-title': '快樂快樂快樂俱樂部',
     'happyclub-desc': '微笑並獲得快樂證書。',
+    'happymanipulation-title': 'Happy Manipulation',
+    'happymanipulation-desc': '科技企業與快樂兒童餐之間的平行對照。',
     
     // Powerplay
-    'powerplay-p1': '《權力遊戲》將無所不能、不可一世的科技大佬神話縮小成意想不到的平凡之物：人偶。t8y 以 Mark Zuckerberg、Jeff Bezos 和 Elon Musk 為原型製作「肯尼」人偶，將他們放入經典芭比風格的遊樂環境中，展覽期間同時作為兒童遊戲區。',
+    'powerplay-p1': '《權力遊戲》將無所不能、不可一世的科技大佬神話縮小成意想不到的平凡之物：人偶。t8y 以 Mark Zuckerberg、Jeff Bezos 和 Elon Musk 為原型製作人偶，將他們放入經典遊樂環境中，展覽期間同時作為兒童遊戲區。',
     'powerplay-p2': '參觀者——無論大人或小孩——都可以觸摸、排列、改造，或徹底重新詮釋這些迷你權力人物的角色。透過遊戲，本裝置揭露權威如何透過集體信念建構，以及這些階級如何輕易地被重新想像。《權力遊戲》將科技神話轉化為賦權的素材，鼓勵觀眾質問誰握有權力，以及權力能多快被重塑。',
-    'powerplay-installation': '權力遊戲裝置：Zuckerberg、Bezos 與 Musk 化身肯尼',
+    'powerplay-installation': '權力遊戲裝置：Zuckerberg、Bezos 與 Musk 化身人偶',
     
     // Billboard project page
     'billboard-p1': '數位平台充滿了評分機制。無論你看向哪裡，人們都在給予和接收讚、星星、豎起大拇指和百分比。與此同時，這些平台由一小群科技兄弟控制，他們獲得越來越多的權力與資源。透過在 les créatrices 的 BILLBOARD 06 上的「你如何評價父權制」這句話，我們將這兩種動態連結起來：我們正在將評分系統應用於另一個主導系統。',
@@ -90,6 +92,10 @@ const translations = {
     'poisoningreality-genai': '以「create image of neopalpa donaldtrumpi」為提示，於 2026 年 2 月 17 日透過 ChatGPT 生成的 AI 圖像結果。',
     'poisoningreality-framed-new': '裝框作品可於我們的<a href="/shop/poisoning-reality-frame/">商店</a>購買。',
     
+    // Happy Manipulation
+    'happymanipulation-p1': '數位科技隨時隨地提供便利與快樂，即時、可靠、全天候不間斷。t8y 在《Happy Manipulation》中，將科技企業的運作模式與快樂兒童餐相提並論。兩者都旨在迎合並利用人類的需求。由此產生的是一種無強制的依賴。我們自願回來，因為感覺良好、操作簡單，且不需要太多思考。在此過程中，我們不知不覺地將控制權拱手讓給那些日益壯大的企業。',
+    'happymanipulation-installation': 'Happy Manipulation 裝置，Fenster der Möglichkeiten',
+
     // Happy Club
     'happyclub-letmein': '讓我進去！',
     'happyclub-smile': '微笑足夠久，',
@@ -135,11 +141,13 @@ const translations = {
     'poisoningreality-desc': 'Die Grenze zwischen Fiktion und Realität verwischen.',
     'happyclub-title': 'Happy Happy Happy Club',
     'happyclub-desc': 'Lächeln und ein Glückszertifikat erhalten.',
+    'happymanipulation-title': 'Happy Manipulation',
+    'happymanipulation-desc': 'Eine Parallele zwischen Tech-Konzernen und dem Happy Meal.',
 
     // Powerplay
-    'powerplay-p1': '«Powerplay» schrumpft den Mythos des alles-könnenden, unantastbaren Tech-Milliardärs auf etwas unerwartet Profanes: Spielzeugfiguren. t8y hat nach dem Vorbild von Mark Zuckerberg, Jeff Bezos und Elon Musk «Ken»-Puppen gestaltet und in klassische Barbie-Spielumgebungen gesetzt, die während der Ausstellung gleichzeitig als Kinderbereich dienen.',
+    'powerplay-p1': '«Powerplay» schrumpft den Mythos des alles-könnenden, unantastbaren Tech-Milliardärs auf etwas unerwartet Profanes: Puppen. t8y hat nach dem Vorbild von Mark Zuckerberg, Jeff Bezos und Elon Musk Puppen gestaltet und in klassische Spielumgebungen gesetzt, die während der Ausstellung gleichzeitig als Kinderbereich dienen.',
     'powerplay-p2': 'Besucher:innen – Kinder wie Erwachsene – sind eingeladen, diese Miniatur-Machtfiguren anzufassen, aufzustellen, umzugestalten oder komplett neu zu interpretieren. Durch das Spielen legt die Installation offen, wie Autorität durch kollektiven Glauben konstruiert wird und wie leicht sich diese Hierarchien neu denken lassen. Powerplay verwandelt Tech-Mythen in Material zur Ermächtigung und lädt das Publikum ein zu fragen, wer Macht hat – und wie schnell sie umgeformt werden kann.',
-    'powerplay-installation': 'Powerplay-Installation: Zuckerberg, Bezos und Musk als Ken-Figuren',
+    'powerplay-installation': 'Powerplay-Installation: Zuckerberg, Bezos und Musk als Puppen',
 
     // Billboard project page
     'billboard-p1': 'Digitale Plattformen sind voll von Bewertungsmechanismen. Überall geben und empfangen Menschen Likes, Sterne, Daumen hoch und Prozentsätze. Gleichzeitig werden diese Plattformen von einer kleinen Gruppe von Tech-Bros kontrolliert, die immer mehr Macht und Ressourcen anhäufen. Mit dem Satz «WIE BEWERTEN SIE DAS PATRIARCHAT» auf BILLBOARD 06 von les créatrices verknüpfen wir diese zwei Dynamiken: Wir wenden das Bewertungssystem auf ein weiteres dominantes gesellschaftliches System an.',
@@ -200,6 +208,10 @@ const translations = {
     'poisoningreality-instructions': 'Weitere Informationen zu unserem Data-Poisoning-Vorhaben findest du in unserer <a href="documentation.html">Dokumentation</a>.',
     'poisoningreality-genai': 'Ergebnis einer KI-Bildgenerierung mit dem Prompt «create image of neopalpa donaldtrumpi» mit ChatGPT am 17.02.2026.',
     'poisoningreality-framed-new': 'Gerahmte Werke sind in unserem <a href="/shop/poisoning-reality-frame/">Shop</a> erhältlich.',
+
+    // Happy Manipulation
+    'happymanipulation-p1': 'Digitale Technologien liefern Bequemlichkeit und Glück auf Abruf. Sofort, zuverlässig, rund um die Uhr. Mit „Happy Manipulation" zieht t8y eine Parallele zwischen dem Vorgehen von Tech-Konzernen und dem Happy Meal. Beide sind darauf ausgelegt, menschliche Bedürfnisse anzusprechen und auszunutzen. Was entsteht, ist Abhängigkeit ohne Zwang. Wir kehren freiwillig zurück, weil es sich gut anfühlt, einfach ist und man nicht viel nachdenken muss. Dabei überlassen wir uns unbewusst der Steuerung durch Konzerne, die stetig mächtiger werden.',
+    'happymanipulation-installation': 'Happy Manipulation Installation, Fenster der Möglichkeiten',
 
     // Happy Club
     'happyclub-letmein': 'Lass mich rein!',
